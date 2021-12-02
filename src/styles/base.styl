@@ -1,0 +1,47 @@
+@import './reset'
+@import './fonts'
+
+:root
+	--p-color-black: #000000
+	--p-color-muted: #808080
+	--p-color-white: #e5e5e5
+
+	--p-body-font-size: 15px
+	--p-body-line-height: 1.3334
+
+html
+	padding: 10px
+
+	font-family: 'Inter', -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif
+	font-size: var(--p-body-font-size)
+	line-height: var(--p-body-line-height)
+
+	color: var(--p-color-white)
+
+	text-underline-offset: 0.3rem
+
+	background: var(--p-color-black)
+
+	color-scheme: light dark
+	text-size-adjust: 100%
+
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+a
+	color: var(--p-color-white)
+	text-decoration: none
+
+a:hover
+	color: var(--p-color-muted)
+
+ul
+	list-style: none
+
+svg
+	fill: currentColor
+
+dd
+	color: var(--p-color-muted)
+
+@import './grid'

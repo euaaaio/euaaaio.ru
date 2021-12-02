@@ -1,0 +1,55 @@
+{
+  "name": "euaaaio.ru",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "node --loader ts-node/esm ./build/index.ts",
+    "test": "vue-tsc --noEmit && eslint ./src && nr build && size-limit"
+  },
+  "author": "Eduard Aksamitov <e@edaks.co>",
+  "license": "MIT",
+  "homepage": "https://euaaaio.ru",
+  "repository": "euaaaio/euaaaio.ru",
+  "type": "module",
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "nanodelay": "^2.0.2",
+    "vue": "^3.2.23"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.11.0",
+    "@postanu/eslint-config": "^3.5.0",
+    "@postanu/stylelint-config": "^0.4.0",
+    "@size-limit/preset-app": "^7.0.3",
+    "@types/node-fetch": "^2.5.12",
+    "@types/spotify-api": "^0.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "@vercel/node": "^1.12.1",
+    "@vitejs/plugin-vue": "^1.10.1",
+    "@vue/server-renderer": "^3.2.23",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prefer-let": "^3.0.1",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-unicorn": "^39.0.0",
+    "eslint-plugin-vue": "^8.1.1",
+    "node-fetch": "^2.6.6",
+    "picocolors": "^1.0.0",
+    "postcss": "^8.4.4",
+    "pug": "^3.0.2",
+    "size-limit": "^7.0.3",
+    "stylelint": "^14.1.0",
+    "stylus": "^0.55.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2",
+    "vite": "^2.6.14",
+    "vue-tsc": "^0.29.8"
+  }
+}
