@@ -24,7 +24,6 @@ async function getAccessToken (): Promise<{ access_token: string }> {
 		throw new Error('Request access token failed')
 	}
 
-	// @ts-ignore
 	return res.json()
 }
 
@@ -39,7 +38,6 @@ async function getNowPaying (accessToken: string): Promise<SpotifyApi.CurrentlyP
 		throw new Error('Request now playing failed')
 	}
 
-	// @ts-ignore
 	return res.json()
 }
 
