@@ -35,5 +35,5 @@ let year = new Date().getFullYear()
 	margin-left: -59px
 
 .end
-	color: var(--p-color-white-05)
+	color: var(--p-color-muted)
 </style>
