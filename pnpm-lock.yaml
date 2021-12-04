@@ -4,7 +4,7 @@ specifiers:
   '@antfu/ni': ^0.11.0
   '@nanostores/i18n': ^0.1.1
   '@nanostores/router': ^0.2.1
-  '@nanostores/vue': nanostores/vue#next
+  '@nanostores/vue': ^0.5.0
   '@postanu/eslint-config': ^3.5.0
   '@postanu/stylelint-config': ^0.4.0
   '@size-limit/preset-app': ^7.0.3
@@ -43,7 +43,7 @@ specifiers:
 dependencies:
   '@nanostores/i18n': 0.1.1_nanostores@0.5.7
   '@nanostores/router': 0.2.1_nanostores@0.5.7
-  '@nanostores/vue': github.com/nanostores/vue/b151663b97081424cb9f502ca77c47b8fe402b4e_nanostores@0.5.7+vue@3.2.23
+  '@nanostores/vue': 0.5.0_nanostores@0.5.7+vue@3.2.23
   nanodelay: 2.0.2
   nanostores: 0.5.7
   vue: 3.2.23
@@ -391,6 +391,21 @@ packages:
       nanostores: ^0.5.0
     dependencies:
       nanostores: 0.5.7
+    dev: false
+
+  /@nanostores/vue/0.5.0_nanostores@0.5.7+vue@3.2.23:
+    resolution: {integrity: sha512-ZXOW5rj04iMsdOWfceItN7qNRH6m1KoAfhlm1nOdmlcxXJGqAA/Xo6CZPs1/XFOViRb1HwzKEr6mau8lc/zxVg==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    peerDependencies:
+      '@vue/devtools-api': '>=6.0.0-beta.20'
+      nanostores: ^0.5.6
+      vue: '>=3.2.0'
+    peerDependenciesMeta:
+      '@vue/devtools-api':
+        optional: true
+    dependencies:
+      nanostores: 0.5.7
+      vue: 3.2.23
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -4209,21 +4224,3 @@ packages:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
     engines: {node: '>=6'}
     dev: true
-
-  github.com/nanostores/vue/b151663b97081424cb9f502ca77c47b8fe402b4e_nanostores@0.5.7+vue@3.2.23:
-    resolution: {tarball: https://codeload.github.com/nanostores/vue/tar.gz/b151663b97081424cb9f502ca77c47b8fe402b4e}
-    id: github.com/nanostores/vue/b151663b97081424cb9f502ca77c47b8fe402b4e
-    name: '@nanostores/vue'
-    version: 0.4.1
-    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
-    peerDependencies:
-      '@vue/devtools-api': '>=6.0.0-beta.20'
-      nanostores: ^0.5.6
-      vue: '>=3.2.0'
-    peerDependenciesMeta:
-      '@vue/devtools-api':
-        optional: true
-    dependencies:
-      nanostores: 0.5.7
-      vue: 3.2.23
-    dev: false
