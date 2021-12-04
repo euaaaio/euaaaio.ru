@@ -4,6 +4,6 @@
       "./dist/assets/app.*.js",
       "./dist/assets/vendor.*.js"
     ],
-    "limit": "600 ms"
+    "limit": "30 kB"
   }
 ]
