@@ -1,8 +1,8 @@
 [
   {
     "path": [
-      "./dist/assets/app.2fb53f2a.js",
-      "./dist/assets/vendor.17bc0e8a.js"
+      "./dist/assets/app.*.js",
+      "./dist/assets/vendor.*.js"
     ],
     "limit": "600 ms"
   }
