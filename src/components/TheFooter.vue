@@ -6,11 +6,16 @@ footer.footer.g
 			span.years 1995 — {{ year }}
 			br
 			br
-			span.end — ready <br>to die
+			span.end(v-html="t.end")
 </template>
 
 <script lang="ts" setup>
+import { useStore } from '@nanostores/vue'
+
+import { footerMessages } from '../i18n'
+
 let year = new Date().getFullYear()
+let t = useStore(footerMessages)
 </script>
 
 <style lang="stylus" scoped>

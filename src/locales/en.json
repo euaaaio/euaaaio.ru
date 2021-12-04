@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Eduard Aksamitov",
+    "description": "Designer. Developer. Suprematist. From the first glimpses of imagination through digitality to the development of the present."
+  },
+
+  "app": {
+    "name": "Eduard Aksamitov",
+    "spotify": "Spotify",
+    "telegram": "Telegram",
+    "discord": "Discord",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "vk": "VK",
+    "pinterest": "Pinterest",
+    "behance": "Behance",
+    "dribbble": "Dribbble",
+    "ello": "Ello",
+    "github": "Github"
+  },
+
+  "connect": {
+    "email": "for what really matters",
+    "phone": "for silence",
+    "spotify": "playing on Spotify",
+    "username": "as alias to find me",
+    "gpg": "for verifying"
+  },
+
+  "footer": {
+    "end": "— ready <br>to die"
+  }
+}

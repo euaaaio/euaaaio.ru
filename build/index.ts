@@ -10,7 +10,7 @@ interface Manifest {
 	[key: string]: string[] | undefined
 }
 
-let routes = ['/']
+let routes = ['/', '/ru']
 
 let require = createRequire(import.meta.url)
 let root = process.cwd()
@@ -62,18 +62,22 @@ async function build (): Promise<void> {
 	let prebuildedTemplate = await fs.readFile(join(outDir, './index.html'), 'utf-8')
 
 	for (let url of routes) {
-		let fileName = `${url}index.html`
+		let fileName = url === '/' ? 'index.html' : `${url}/index.html`
 
 		log(`Rendering ${color.bold(fileName)} page…`)
-		let [html, ctx] = await render()
+		let [html, ctx, meta] = await render(url)
 
 		log(`Rendering links for ${color.bold(fileName)} page…`)
 		let preloadLinks = await renderPreloadLinks(ctx.modules, manifest)
 		html = prebuildedTemplate
+			.replace('<!--app-title-->', meta.title)
+			.replace('<!--app-meta-->', `<meta name="description" content="${meta.description}">`)
 			.replace('<!--app-html-->', html)
 			.replace('<!--preload-links-->', preloadLinks)
 
-		await fs.writeFile(join(outDir, fileName), html, 'utf-8')
+		let filePath = join(outDir, fileName)
+		await fs.mkdir(filePath.split('index.html')[0], { recursive: true })
+		await fs.writeFile(filePath, html, 'utf-8')
 	}
 
 	log('Cleaning up')

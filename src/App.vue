@@ -1,70 +1,77 @@
 <template lang="pug">
 main.g
 	.name
-		span Eduard Aksamitov
+		span {{ app.name }}
 	dl.contact
 		dt
 			link-external(href="mailto:hello@euaaaio.ru") hello@euaaaio.ru
-		dd for what really matters
+		dd {{ connect.email }}
 		dt 00 911 785 85 70
-		dd for silence
+		dd {{ connect.phone }}
 	dl.spotify(v-if="spotify.isPlaying")
 		dt
 			icon-spotify
 			link-external(:href="spotify.url") {{ spotify.artists }}<br>{{ spotify.song }}
-		dd playing on Spotify
+		dd {{ connect.spotify }}
 	dl.username
 		dt euaaaio
-		dd as alias to find me
+		dd {{ connect.username }}
 	.follow
 		ul
 			li
-				link-external(href="https://open.spotify.com/user/bt3c50mixhdyv8qb56a6hpnbi") Spotify
+				link-external(href="https://open.spotify.com/user/bt3c50mixhdyv8qb56a6hpnbi") {{ app.spotify }}
 		ul
 			li
-				link-external(href="https://t.me/euaaaio") Telegram
+				link-external(href="https://t.me/euaaaio") {{ app.telegram }}
 			li
-				link-external(href="https://discordapp.com/users/euaaaio#2400") Discord
+				link-external(href="https://discordapp.com/users/euaaaio#2400") {{ app.discord }}
 		ul
 			li
-				link-external(	href="https://instagram.com/euaaaio") Instagram
+				link-external(href="https://instagram.com/euaaaio") {{ app.instagram }}
 			li
-				link-external(href="https://facebook.com/euaaaio") Facebook
+				link-external(href="https://facebook.com/euaaaio") {{ app.facebook }}
 			li
-				link-external(href="https://twitter.com/euaaaio") Twitter
+				link-external(href="https://twitter.com/euaaaio") {{ app.twitter }}
 			li
-				link-external(href="https://vk.com/euaaaio") VK
+				link-external(href="https://vk.com/euaaaio") {{ app.vk }}
 		ul
 			li
-				link-external(href="https://pinterest.com/suprematist") Pinterest
+				link-external(href="https://pinterest.com/suprematist") {{ app.pinterest }}
 			li
-				link-external(href="https://behance.com/euaaaio") Behance
+				link-external(href="https://behance.com/euaaaio") {{ app.behance }}
 			li
-				link-external(href="https://dribbble.com/euaaaio") Dribbble
+				link-external(href="https://dribbble.com/euaaaio") {{ app.dribbble }}
 			li
-				link-external(href="https://ello.co/euaaaio") Ello
+				link-external(href="https://ello.co/euaaaio") {{ app.ello }}
 		ul
 			li
-				link-external(href="https://github.com/euaaaio") Github
+				link-external(href="https://github.com/euaaaio") {{ app.github }}
 	dl.gpg
 		dt
 			span.mark GPG
 			span 8A96 72CC F199 75E6
-		dd for verifying
+		dd {{ connect.gpg }}
 the-footer
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { mapStores } from '@nanostores/vue'
 
+import { appMessages, connectMessages } from './i18n'
 import { useSpotifyNow } from './composables/useSpotifyNow'
 import LinkExternal from './components/LinkExternal.vue'
 import IconSpotify from './components/IconSpotify.vue'
 import TheFooter from './components/TheFooter.vue'
 
-let spotify = import.meta.env.SSR
+let spotify = import.meta.env.SSR || import.meta.env.DEV
 	? ref<{ isPlaying: false }>({ isPlaying: false })
 	: useSpotifyNow()
+
+let { app, connect } = mapStores({
+	app: appMessages,
+	connect: connectMessages
+})
 </script>
 
 <style lang="stylus" scoped>

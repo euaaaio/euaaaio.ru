@@ -2,6 +2,9 @@ lockfileVersion: 5.3
 
 specifiers:
   '@antfu/ni': ^0.11.0
+  '@nanostores/i18n': ^0.1.1
+  '@nanostores/router': ^0.2.1
+  '@nanostores/vue': nanostores/vue#next
   '@postanu/eslint-config': ^3.5.0
   '@postanu/stylelint-config': ^0.4.0
   '@size-limit/preset-app': ^7.0.3
@@ -23,6 +26,7 @@ specifiers:
   eslint-plugin-unicorn: ^39.0.0
   eslint-plugin-vue: ^8.1.1
   nanodelay: ^2.0.2
+  nanostores: ^0.5.7
   node-fetch: ^2.6.6
   picocolors: ^1.0.0
   postcss: ^8.4.4
@@ -37,7 +41,11 @@ specifiers:
   vue-tsc: ^0.29.8
 
 dependencies:
+  '@nanostores/i18n': 0.1.1_nanostores@0.5.7
+  '@nanostores/router': 0.2.1_nanostores@0.5.7
+  '@nanostores/vue': github.com/nanostores/vue/b151663b97081424cb9f502ca77c47b8fe402b4e_nanostores@0.5.7+vue@3.2.23
   nanodelay: 2.0.2
+  nanostores: 0.5.7
   vue: 3.2.23
 
 devDependencies:
@@ -366,6 +374,24 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
+
+  /@nanostores/i18n/0.1.1_nanostores@0.5.7:
+    resolution: {integrity: sha512-5rY2mh5E0M6AAJnxw1un6M789X2iBCGBtdIv7TstXUouR0MbyJMG2kNU0DmnE21mvuAf4XN87eYRUc1efxCSZw==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    peerDependencies:
+      nanostores: ^0.5.0
+    dependencies:
+      nanostores: 0.5.7
+    dev: false
+
+  /@nanostores/router/0.2.1_nanostores@0.5.7:
+    resolution: {integrity: sha512-ums3IKt1S5biHrtUaZVv6FIq1KsjMrn19/p+fa2t0QAvFtusCYOdt8/+kCLof7E0S11zjCGstG7vEwyABAcuiQ==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    peerDependencies:
+      nanostores: ^0.5.0
+    dependencies:
+      nanostores: 0.5.7
+    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2742,6 +2768,11 @@ packages:
       picocolors: 1.0.0
     dev: true
 
+  /nanostores/0.5.7:
+    resolution: {integrity: sha512-MUZXyr3vZA9L+vVouyh0c5tPsdG09JK8LaMT0J/0oEMGLP037anJINIzWW4ENnrJkt66HpC1rwNsH6kSvVGnOg==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    dev: false
+
   /natural-compare/1.4.0:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
@@ -4178,3 +4209,21 @@ packages:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
     engines: {node: '>=6'}
     dev: true
+
+  github.com/nanostores/vue/b151663b97081424cb9f502ca77c47b8fe402b4e_nanostores@0.5.7+vue@3.2.23:
+    resolution: {tarball: https://codeload.github.com/nanostores/vue/tar.gz/b151663b97081424cb9f502ca77c47b8fe402b4e}
+    id: github.com/nanostores/vue/b151663b97081424cb9f502ca77c47b8fe402b4e
+    name: '@nanostores/vue'
+    version: 0.4.1
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    peerDependencies:
+      '@vue/devtools-api': '>=6.0.0-beta.20'
+      nanostores: ^0.5.6
+      vue: '>=3.2.0'
+    peerDependenciesMeta:
+      '@vue/devtools-api':
+        optional: true
+    dependencies:
+      nanostores: 0.5.7
+      vue: 3.2.23
+    dev: false
