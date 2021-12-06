@@ -2,7 +2,6 @@
 /* eslint-disable security/detect-non-literal-require */
 import { build as viteBuild } from 'vite'
 import { promises as fs } from 'node:fs'
-import { createRequire } from 'node:module'
 import { join } from 'node:path'
 import color from 'picocolors'
 
@@ -12,7 +11,6 @@ interface Manifest {
 
 let routes = ['/', '/ru']
 
-let require = createRequire(import.meta.url)
 let root = process.cwd()
 let env = 'production'
 
