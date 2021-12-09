@@ -25,7 +25,6 @@ specifiers:
   eslint-plugin-security: ^1.4.0
   eslint-plugin-unicorn: ^39.0.0
   eslint-plugin-vue: ^8.1.1
-  nanodelay: ^2.0.2
   nanostores: ^0.5.7
   node-fetch: ^2.6.6
   picocolors: ^1.0.0
@@ -44,7 +43,6 @@ dependencies:
   '@nanostores/i18n': 0.1.1_nanostores@0.5.7
   '@nanostores/router': 0.2.1_nanostores@0.5.7
   '@nanostores/vue': 0.5.0_nanostores@0.5.7+vue@3.2.23
-  nanodelay: 2.0.2
   nanostores: 0.5.7
   vue: 3.2.23
 
@@ -2766,11 +2764,6 @@ packages:
   /multimap/1.1.0:
     resolution: {integrity: sha512-0ZIR9PasPxGXmRsEF8jsDzndzHDj7tIav+JUmvIFB/WHswliFnquxECT/De7GR4yg99ky/NlRKJT82G1y271bw==}
     dev: true
-
-  /nanodelay/2.0.2:
-    resolution: {integrity: sha512-6AS5aCSXsjoxq2Jr9CdaAeT60yoYDOTp6po9ziqeOeY6vf6uTEHYSqWql6EFILrM3fEfXgkZ4KqE9L0rTm/wlA==}
-    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
-    dev: false
 
   /nanoid/3.1.30:
     resolution: {integrity: sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==}
