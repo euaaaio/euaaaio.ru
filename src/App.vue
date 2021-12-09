@@ -79,6 +79,7 @@ let { app, connect } = mapStores({
 	position: sticky
 	top: 10px
 	grid-area: 1 / e / 1 / span 2
+	color: var(--p-color-black)
 	text-transform: lowercase
 	user-select: none
 	mix-blend-mode: difference
