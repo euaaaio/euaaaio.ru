@@ -1,5 +1,5 @@
-import { VercelRequest, VercelResponse } from '@vercel/node'
 import fetch from 'node-fetch'
+import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 const clientId = process.env.SPOTIFY_CLIENT_ID as string
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET as string
