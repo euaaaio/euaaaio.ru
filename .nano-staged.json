@@ -1,0 +1,5 @@
+{
+  "*.(js|ts|vue)": "eslint",
+  "*.(vue|styl)": "stylelint",
+  "*.(ts,vue)": "vue-tsc --noEmit"
+}

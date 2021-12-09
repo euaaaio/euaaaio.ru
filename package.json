@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "node --loader ts-node/esm ./build/index.ts",
-    "test": "vue-tsc --noEmit && eslint ./src && nr build && size-limit"
+    "test": "vue-tsc --noEmit && eslint && nr build && size-limit"
   },
   "author": "Eduard Aksamitov <e@edaks.co>",
   "license": "MIT",
@@ -43,10 +43,12 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-unicorn": "^39.0.0",
     "eslint-plugin-vue": "^8.1.1",
+    "nano-staged": "^0.4.5",
     "node-fetch": "^2.6.6",
     "picocolors": "^1.0.0",
     "postcss": "^8.4.4",
     "pug": "^3.0.2",
+    "simple-git-hooks": "^2.7.0",
     "size-limit": "^7.0.3",
     "stylelint": "^14.1.0",
     "stylus": "^0.55.0",
