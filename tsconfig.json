@@ -12,8 +12,7 @@
     "resolveJsonModule": true,
     "lib": [
       "esnext",
-      "dom",
-      "dom.iterable"
+      "dom"
     ],
   },
   "include": [
