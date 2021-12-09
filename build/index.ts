@@ -2,7 +2,6 @@
 /* eslint-disable security/detect-non-literal-require */
 import { build as viteBuild } from 'vite'
 import { promises as fs } from 'node:fs'
-import { createRequire } from 'node:module'
 import { join } from 'node:path'
 import color from 'picocolors'
 
@@ -12,7 +11,6 @@ interface Manifest {
 
 let routes = ['/', '/ru']
 
-let require = createRequire(import.meta.url)
 let root = process.cwd()
 let env = 'production'
 
@@ -41,6 +39,10 @@ async function build (): Promise<void> {
 
 	log('Building server…')
 	await viteBuild({
+		// @ts-ignore
+		ssr: {
+			noExternal: true
+		},
 		build: {
 			ssr: serverEntry,
 			outDir: tempOutDir,
@@ -57,7 +59,7 @@ async function build (): Promise<void> {
 
 	log(`Rendering ${color.bold(routes.length)} pages…`)
 	// eslint-disable-next-line @typescript-eslint/no-var-requires
-	let { render } = require(join(tempOutDir, './entry-server.cjs'))
+	let { render } = await import(join(tempOutDir, './entry-server.cjs'))
 	let manifest = JSON.parse(await fs.readFile(join(root, './dist/ssr-manifest.json'), 'utf-8'))
 	let prebuildedTemplate = await fs.readFile(join(outDir, './index.html'), 'utf-8')
 
