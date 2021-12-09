@@ -78,11 +78,12 @@ let { app, connect } = mapStores({
 .name
 	position: sticky
 	top: 10px
-	color: var(--p-color-black)
 	grid-area: 1 / e / 1 / span 2
+	color: var(--p-color-black)
 	text-transform: lowercase
 	user-select: none
 	mix-blend-mode: difference
+
 	@media (prefers-color-scheme: dark)
 		color: var(--p-color-white)
 
