@@ -2,18 +2,29 @@
 @import './fonts'
 
 :root
-	--p-color-black: #000000
-	--p-color-muted: #808080
-	--p-color-white: #e5e5e5
-
 	--p-body-font-size: 15px
+	--p-body-font-weight: 440
 	--p-body-line-height: 1.3334
+
+	--p-color-black: #e5e5e5
+	--p-color-muted: #6b6b6b
+	--p-color-white: #000000
+
+	color-scheme: dark light
+
+	@media (prefers-color-scheme: dark)
+		--p-body-font-weight: 400
+
+		--p-color-black: #000000
+		--p-color-muted: #808080
+		--p-color-white: #e5e5e5
 
 html
 	padding: 10px
 
 	font-family: 'Inter', -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif
 	font-size: var(--p-body-font-size)
+	font-weight: var(--p-body-font-weight)
 	line-height: var(--p-body-line-height)
 
 	color: var(--p-color-white)
