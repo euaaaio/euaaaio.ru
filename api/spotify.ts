@@ -49,7 +49,7 @@ export default async function handler (
 		let { access_token } = await getAccessToken()
 		let response = await getNowPaying(access_token)
 
-		if (!response.is_playing) {
+		if (!response.is_playing || response.currently_playing_type !== 'track') {
 			return res.status(200).json({ is_playing: false })
 		}
 
