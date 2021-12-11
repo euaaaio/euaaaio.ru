@@ -72,6 +72,7 @@ async function build (): Promise<void> {
 		log(`Rendering links for ${color.bold(fileName)} page…`)
 		let preloadLinks = await renderPreloadLinks(ctx.modules, manifest)
 		html = prebuildedTemplate
+			.replace('<html>', `<html lang="${meta.lang}">`)
 			.replace('<!--app-title-->', meta.title)
 			.replace('<!--app-meta-->', `<meta name="description" content="${meta.description}">`)
 			.replace('<!--app-html-->', html)
