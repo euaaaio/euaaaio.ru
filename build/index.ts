@@ -1,5 +1,3 @@
-/* eslint-disable security/detect-non-literal-fs-filename */
-/* eslint-disable security/detect-non-literal-require */
 import { build as viteBuild } from 'vite'
 import { promises as fs } from 'node:fs'
 import { join } from 'node:path'
@@ -20,7 +18,7 @@ let template = join(root, './index.html')
 let outDir = join(root, './dist')
 
 function log (text: string): void {
-	console.log(`${color.bold(color.cyan('SSG'))} ${color.gray(text)}`)
+	console.log(`${color.bold(color.cyan('SSG'))} ${color.green(text)}`)
 }
 
 async function build (): Promise<void> {
@@ -40,7 +38,7 @@ async function build (): Promise<void> {
 	log('Building server…')
 	await viteBuild({
 		// @ts-ignore
-		ssr: {
+		ssrConfig: {
 			noExternal: true
 		},
 		build: {
@@ -50,7 +48,8 @@ async function build (): Promise<void> {
 			cssCodeSplit: false,
 			rollupOptions: {
 				output: {
-					entryFileNames: '[name].cjs'
+					entryFileNames: '[name].js',
+					format: 'esm'
 				}
 			}
 		},
@@ -58,8 +57,7 @@ async function build (): Promise<void> {
 	})
 
 	log(`Rendering ${color.bold(routes.length)} pages…`)
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
-	let { render } = await import(join(tempOutDir, './entry-server.cjs'))
+	let { render } = await import(join(tempOutDir, './entry-server.js'))
 	let manifest = JSON.parse(await fs.readFile(join(root, './dist/ssr-manifest.json'), 'utf-8'))
 	let prebuildedTemplate = await fs.readFile(join(outDir, './index.html'), 'utf-8')
 
@@ -110,7 +108,7 @@ async function renderPreloadLinks (modules: string[], manifest: Manifest): Promi
 function renderPreloadLink (file: string): string {
 	let html = ''
 	if (file.endsWith('.js')) {
-		html += `<link rel="modulepreload" crossorigin href="${file}">`
+		html += `<link rel="modulepreload" href="${file}" crossorigin>`
 	} else if (file.endsWith('.css')) {
 		html += `<link rel="stylesheet" href="${file}">`
 	} else if (file.endsWith('.woff2')) {
