@@ -55,8 +55,8 @@ the-footer
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { mapStores } from '@nanostores/vue'
+import { ref } from 'vue'
 
 import { appMessages, connectMessages } from './i18n'
 import { useSpotifyNow } from './composables/useSpotifyNow'
