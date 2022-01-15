@@ -1,7 +1,6 @@
 <template lang="pug">
 main.g
-	.name
-		span {{ app.name }}
+	the-header
 	dl.contact
 		dt
 			link-external(href="mailto:hello@euaaaio.ru") hello@euaaaio.ru
@@ -62,6 +61,7 @@ import { appMessages, connectMessages } from './i18n'
 import { useSpotifyNow } from './composables/useSpotifyNow'
 import LinkExternal from './components/LinkExternal.vue'
 import IconSpotify from './components/IconSpotify.vue'
+import TheHeader from './components/TheHeader.vue'
 import TheFooter from './components/TheFooter.vue'
 
 let spotify = import.meta.env.SSR || import.meta.env.DEV
@@ -75,24 +75,6 @@ let { app, connect } = mapStores({
 </script>
 
 <style lang="stylus" scoped>
-.name
-	position: sticky
-	top: 10px
-	grid-area: 1 / e / 1 / span 2
-	color: var(--p-color-black)
-	text-transform: lowercase
-	user-select: none
-	mix-blend-mode: difference
-
-	@media (prefers-color-scheme: dark)
-		color: var(--p-color-white)
-
-	span
-		user-select: auto
-
-	@media (max-width: 736px)
-		grid-area: 1 / j
-
 .contact
 	grid-area: 1 / j / span 2 / span 2
 
