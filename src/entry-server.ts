@@ -1,6 +1,7 @@
-import { renderToString, SSRContext } from '@vue/server-renderer'
+import { renderToString } from '@vue/server-renderer'
 import { createSSRApp } from 'vue'
-import { StoreValue } from 'nanostores'
+import type { SSRContext } from '@vue/server-renderer'
+import type { StoreValue } from 'nanostores'
 
 import { metaMessages } from './i18n'
 import { router } from './router'
