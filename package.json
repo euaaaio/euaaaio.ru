@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "node --loader ts-node/esm ./build/index.ts",
-    "test": "vue-tsc --noEmit && eslint && nr build && size-limit"
+    "test": "vue-tsc --noEmit && eslint . && nr build && size-limit"
   },
   "author": "Eduard Aksamitov <e@edaks.co>",
   "license": "MIT",

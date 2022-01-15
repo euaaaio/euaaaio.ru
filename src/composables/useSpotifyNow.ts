@@ -1,4 +1,5 @@
-import { getCurrentScope, onScopeDispose, ref, Ref } from 'vue'
+import { getCurrentScope, onScopeDispose, ref } from 'vue'
+import type { Ref } from 'vue'
 
 export type SpotifyNow = {
 	isPlaying: false

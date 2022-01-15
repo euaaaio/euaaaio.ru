@@ -58,6 +58,7 @@ async function build (): Promise<void> {
 
 	log(`Rendering ${color.bold(routes.length)} pages…`)
 	let { render } = await import(join(tempOutDir, './entry-server.js'))
+	// eslint-disable-next-line unicorn/prefer-json-parse-buffer
 	let manifest = JSON.parse(await fs.readFile(join(root, './dist/ssr-manifest.json'), 'utf-8'))
 	let prebuildedTemplate = await fs.readFile(join(outDir, './index.html'), 'utf-8')
 
