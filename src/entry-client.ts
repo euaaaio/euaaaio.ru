@@ -1,10 +1,13 @@
 import './styles/base.styl'
-import { createSSRApp } from 'vue'
+import { createApp, createSSRApp } from 'vue'
 
+import { isBrowser } from './utils'
 import { i18n } from './stores/i18n'
 import App from './App.vue'
 
-let app = createSSRApp(App)
+let app = isBrowser
+	? createApp(App)
+	: createSSRApp(App)
 
 if (i18n.loading.get()) {
 	let unbind = i18n.loading.listen(loading => {
