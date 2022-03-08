@@ -61,11 +61,10 @@ import { appMessages, connectMessages } from '../i18n'
 import { useSpotifyNow } from '../composables/useSpotifyNow'
 import LinkExternal from '../components/LinkExternal.vue'
 import IconSpotify from '../components/IconSpotify.vue'
-import TheHeader from '../components/TheHeader.vue'
-import TheFooter from '../components/TheFooter.vue'
+import type { SpotifyNow } from '../composables/useSpotifyNow'
 
 let spotify = import.meta.env.SSR || import.meta.env.DEV
-	? ref<{ isPlaying: false }>({ isPlaying: false })
+	? ref<SpotifyNow>({ isPlaying: false })
 	: useSpotifyNow()
 
 let { app, connect } = mapStores({
