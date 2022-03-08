@@ -1,56 +1,53 @@
 <template lang="pug">
-main.g
-	the-header
-	dl.contact
-		dt
-			link-external(href="mailto:hello@euaaaio.ru") hello@euaaaio.ru
-		dd {{ connect.email }}
-		dt 00 911 785 85 70
-		dd {{ connect.phone }}
-	dl.spotify(v-if="spotify.isPlaying")
-		dt
-			icon-spotify
-			link-external(:href="spotify.url") {{ spotify.artists }}<br>{{ spotify.song }}
-		dd {{ connect.spotify }}
-	dl.username
-		dt euaaaio
-		dd {{ connect.username }}
-	.follow
-		ul
-			li
-				link-external(href="https://open.spotify.com/user/bt3c50mixhdyv8qb56a6hpnbi") {{ app.spotify }}
-		ul
-			li
-				link-external(href="https://t.me/euaaaio") {{ app.telegram }}
-			li
-				link-external(href="https://discordapp.com/users/euaaaio#2400") {{ app.discord }}
-		ul
-			li
-				link-external(href="https://instagram.com/euaaaio") {{ app.instagram }}
-			li
-				link-external(href="https://facebook.com/euaaaio") {{ app.facebook }}
-			li
-				link-external(href="https://twitter.com/euaaaio") {{ app.twitter }}
-			li
-				link-external(href="https://vk.com/euaaaio") {{ app.vk }}
-		ul
-			li
-				link-external(href="https://pinterest.com/suprematist") {{ app.pinterest }}
-			li
-				link-external(href="https://behance.com/euaaaio") {{ app.behance }}
-			li
-				link-external(href="https://dribbble.com/euaaaio") {{ app.dribbble }}
-			li
-				link-external(href="https://ello.co/euaaaio") {{ app.ello }}
-		ul
-			li
-				link-external(href="https://github.com/euaaaio") {{ app.github }}
-	dl.gpg
-		dt
-			span.mark GPG
-			span 8A96 72CC F199 75E6
-		dd {{ connect.gpg }}
-the-footer
+dl.contact
+	dt
+		link-external(href="mailto:hello@euaaaio.ru") hello@euaaaio.ru
+	dd {{ connect.email }}
+	dt 00 911 785 85 70
+	dd {{ connect.phone }}
+dl.spotify(v-if="spotify.isPlaying")
+	dt
+		icon-spotify
+		link-external(:href="spotify.url") {{ spotify.artists }}<br>{{ spotify.song }}
+	dd {{ connect.spotify }}
+dl.username
+	dt euaaaio
+	dd {{ connect.username }}
+.follow
+	ul
+		li
+			link-external(href="https://open.spotify.com/user/bt3c50mixhdyv8qb56a6hpnbi") {{ app.spotify }}
+	ul
+		li
+			link-external(href="https://t.me/euaaaio") {{ app.telegram }}
+		li
+			link-external(href="https://discordapp.com/users/euaaaio#2400") {{ app.discord }}
+	ul
+		li
+			link-external(href="https://instagram.com/euaaaio") {{ app.instagram }}
+		li
+			link-external(href="https://facebook.com/euaaaio") {{ app.facebook }}
+		li
+			link-external(href="https://twitter.com/euaaaio") {{ app.twitter }}
+		li
+			link-external(href="https://vk.com/euaaaio") {{ app.vk }}
+	ul
+		li
+			link-external(href="https://pinterest.com/suprematist") {{ app.pinterest }}
+		li
+			link-external(href="https://behance.com/euaaaio") {{ app.behance }}
+		li
+			link-external(href="https://dribbble.com/euaaaio") {{ app.dribbble }}
+		li
+			link-external(href="https://ello.co/euaaaio") {{ app.ello }}
+	ul
+		li
+			link-external(href="https://github.com/euaaaio") {{ app.github }}
+dl.gpg
+	dt
+		span.mark GPG
+		span 8A96 72CC F199 75E6
+	dd {{ connect.gpg }}
 </template>
 
 <script lang="ts" setup>
