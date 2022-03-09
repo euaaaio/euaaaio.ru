@@ -36,5 +36,5 @@ const href = computed(() => `/${routerState.value?.params.lang || ''}`)
 
 	@media (max-width: 736px)
 		grid-column: j
-		padding-top: 300px
+		margin-top: 300px
 </style>
