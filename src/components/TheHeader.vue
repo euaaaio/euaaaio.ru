@@ -18,20 +18,16 @@ const href = computed(() => `/${routerState.value?.params.lang || ''}`)
 
 <style lang="stylus">
 .header
-	position: sticky
+	position: fixed
 	top: 10px
-	grid-area: 1 / e / 1 / span 2
+	left: calc(100% * 0.3334 + 10px) // 4 / 12
 	color: var(--p-color-black)
-	text-transform: lowercase
 	user-select: none
 	mix-blend-mode: difference
 
 	@media (prefers-color-scheme: dark)
 		color: var(--p-color-white)
 
-	span
-		user-select: auto
-
 	@media (max-width: 736px)
-		grid-area: 1 / j
+		left: calc(100% * 0.8334 + 10px) // 10 / 12
 </style>
