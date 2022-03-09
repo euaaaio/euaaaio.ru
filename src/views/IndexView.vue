@@ -74,9 +74,6 @@ let { app, connect } = mapStores({
 .contact
 	grid-area: 1 / j / span 2 / span 2
 
-	dd
-		margin-bottom: 20px
-
 	@media (max-width: 736px)
 		grid-row: 4
 
@@ -111,7 +108,6 @@ let { app, connect } = mapStores({
 			display: inline-block
 			padding: 10px 0
 			text-decoration: underline
-			text-transform: lowercase
 
 		&:first-child
 			a
@@ -133,6 +129,9 @@ let { app, connect } = mapStores({
 
 .gpg
 	grid-area: 14 / j / span 1 / span 2
+
+	dt
+		text-transform: uppercase
 
 	.mark
 		padding-right: 20px
