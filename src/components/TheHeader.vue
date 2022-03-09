@@ -1,6 +1,6 @@
 <template lang="pug">
-header.header
-	a(:href="href") {{ messages.name }}
+header.header.g
+	a.header__name(:href="href") {{ messages.name }}
 </template>
 
 <script lang="ts" setup>
@@ -18,9 +18,10 @@ const href = computed(() => `/${routerState.value?.params.lang || ''}`)
 
 <style lang="stylus">
 .header
-	position: fixed
+	position: sticky
 	top: 10px
-	left: calc(100% * 0.3334 + 10px) // 4 / 12
+	grid-auto-rows: 0px
+	width: 100%
 	color: var(--p-color-black)
 	user-select: none
 	mix-blend-mode: difference
@@ -29,5 +30,13 @@ const href = computed(() => `/${routerState.value?.params.lang || ''}`)
 		color: var(--p-color-white)
 
 	@media (max-width: 736px)
-		left: calc(100% * 0.8334 + 10px) // 10 / 12
+		top: -290px
+		grid-template-rows: none
+
+.header__name
+	grid-column: e
+
+	@media (max-width: 736px)
+		grid-column: j
+		padding-top: 300px
 </style>
