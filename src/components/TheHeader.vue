@@ -23,8 +23,6 @@ const href = computed(() => `/${routerState.value?.params.lang || ''}`)
 	grid-auto-rows: 0px
 	width: 100%
 	color: var(--p-color-black)
-	user-select: none
-	mix-blend-mode: difference
 
 	@media (prefers-color-scheme: dark)
 		color: var(--p-color-white)
