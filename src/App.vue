@@ -1,6 +1,6 @@
 <template lang="pug">
-main.g
-	the-header
+the-header
+main
 	component(:is="view")
 the-footer
 </template>
