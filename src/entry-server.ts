@@ -3,15 +3,14 @@ import { createSSRApp } from 'vue'
 import type { SSRContext } from '@vue/server-renderer'
 import type { StoreValue } from 'nanostores'
 
-import { metaMessages } from './i18n'
+import { i18n, indexMessages } from './i18n'
 import { router } from './router'
-import { i18n } from './i18n'
 import App from './App.vue'
 
 export async function render (url: string): Promise<[
 	string,
 	SSRContext,
-	StoreValue<typeof metaMessages>
+	StoreValue<typeof indexMessages>
 ]> {
 	let app = createSSRApp(App)
 
@@ -29,7 +28,7 @@ export async function render (url: string): Promise<[
 	}
 
 	let ctx: SSRContext = {}
-	let meta = metaMessages.get()
+	let page = indexMessages.get()
 	let html = await renderToString(app, ctx)
-	return [html, ctx, meta]
+	return [html, ctx, page]
 }

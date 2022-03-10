@@ -20,9 +20,9 @@
   },
 
   "index": {
-    "meta-lang": "ru",
-    "meta-title": "Eduard Aksamitov",
-    "meta-description": "Designer. Developer. Suprematist. From the first glimpses of imagination through digitality to the development of the present.",
+    "metaLang": "ru",
+    "metaTitle": "Eduard Aksamitov",
+    "metaDescription": "Designer. Developer. Suprematist. From the first glimpses of imagination through digitality to the development of the present.",
 
     "bio": "Independent <br>designer, developer, suprematist<br><br><s>Freelance</s>",
     "consultancy": "",

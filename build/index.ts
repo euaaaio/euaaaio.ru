@@ -66,14 +66,14 @@ async function build (): Promise<void> {
 		let fileName = url === '/' ? 'index.html' : `${url}/index.html`
 
 		log(`Rendering ${color.bold(fileName)} page…`)
-		let [html, ctx, meta] = await render(url)
+		let [html, ctx, page] = await render(url)
 
 		log(`Rendering links for ${color.bold(fileName)} page…`)
 		let preloadLinks = await renderPreloadLinks(ctx.modules, manifest)
 		html = prebuildedTemplate
-			.replace('<html>', `<html lang="${meta.lang}">`)
-			.replace('<!--app-title-->', meta.title)
-			.replace('<!--app-meta-->', `<meta name="description" content="${meta.description}">`)
+			.replace('<html>', `<html lang="${page.metaLang}">`)
+			.replace('<!--app-title-->', page.metaTitle)
+			.replace('<!--app-meta-->', `<meta name="description" content="${page.metaDescription}">`)
 			.replace('<!--app-html-->', html)
 			.replace('<!--preload-links-->', preloadLinks)
 
