@@ -2,7 +2,7 @@ import './styles/base.styl'
 import { createApp, createSSRApp } from 'vue'
 
 import { isBrowser } from './utils'
-import { i18n } from './stores/i18n'
+import { i18n } from './i18n'
 import App from './App.vue'
 
 let app = isBrowser
