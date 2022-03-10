@@ -52,17 +52,13 @@ dl.gpg
 
 <script lang="ts" setup>
 import { mapStores } from '@nanostores/vue'
-import { ref } from 'vue'
 
 import { appMessages, connectMessages } from '../i18n'
 import { useSpotifyNow } from '../composables/useSpotifyNow'
 import LinkExternal from '../components/LinkExternal.vue'
 import IconSpotify from '../components/IconSpotify.vue'
-import type { SpotifyNow } from '../composables/useSpotifyNow'
 
-let spotify = import.meta.env.SSR || import.meta.env.DEV
-	? ref<SpotifyNow>({ isPlaying: false })
-	: useSpotifyNow()
+let spotify = useSpotifyNow()
 
 let { app, connect } = mapStores({
 	app: appMessages,
