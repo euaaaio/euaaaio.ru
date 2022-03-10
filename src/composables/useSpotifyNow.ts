@@ -36,7 +36,9 @@ export function useSpotifyNow (): Ref<SpotifyNow> {
 		setTimeout(loop, 10_000)
 	}
 
-	loop()
+	if (!import.meta.env.SSR && !import.meta.env.DEV) {
+		loop()
+	}
 
 	if (getCurrentScope()) {
 		onScopeDispose(() => {
