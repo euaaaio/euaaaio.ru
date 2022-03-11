@@ -84,6 +84,10 @@ let { app, page } = mapStores({
 </script>
 
 <style lang="stylus" scoped>
+dd
+	margin-bottom: 20px
+	color: var(--p-color-muted)
+
 .bio,
 .general,
 .post
