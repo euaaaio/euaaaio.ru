@@ -15,10 +15,10 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@nanostores/i18n": "^0.2.0",
-    "@nanostores/router": "^0.2.2",
-    "@nanostores/vue": "^0.5.3",
-    "nanostores": "^0.5.8",
+    "@nanostores/i18n": "^0.2.1",
+    "@nanostores/router": "^0.3.1",
+    "@nanostores/vue": "^0.5.5",
+    "nanostores": "^0.5.12",
     "vue": "^3.2.26"
   },
   "devDependencies": {
