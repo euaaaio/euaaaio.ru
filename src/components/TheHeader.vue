@@ -1,5 +1,5 @@
 <template lang="pug">
-header.header.g
+header.header.g(:class="{ '--home': isHome }")
 	a.header__name(:href="href") {{ messages.name }}
 </template>
 
@@ -14,6 +14,7 @@ const messages = useStore(appMessages)
 const routerState = useStore(router)
 
 const href = computed(() => `/${routerState.value?.params.lang || ''}`)
+const isHome = computed(() => routerState.value?.route === 'IndexView')
 </script>
 
 <style lang="stylus">
@@ -28,13 +29,19 @@ const href = computed(() => `/${routerState.value?.params.lang || ''}`)
 		color: var(--p-color-white)
 
 	@media (max-width: 736px)
-		top: -290px
-		grid-template-rows: none
+		position: inherit
+
+	&.--home
+		@media (max-width: 736px)
+			position: sticky
+			top: -290px
+
+			.header__name
+				margin-top: 300px
 
 .header__name
 	grid-column: e
 
 	@media (max-width: 736px)
 		grid-column: j
-		margin-top: 300px
 </style>
