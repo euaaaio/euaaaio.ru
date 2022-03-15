@@ -4,7 +4,7 @@ section.section.g
 		img
 	p.bio(v-html="page.bio")
 	.consultancy(v-if="page.consultancy")
-		preview-link(href="/consultancy" v-html="page.consultancy")
+		preview-link(href="/ru/consultancy" v-html="page.consultancy")
 	dl.general
 		dt 026
 		dd {{ page.age }}
