@@ -14,7 +14,7 @@ section.section.g
 		dd {{ page.location }}
 	preview-link.post(href="/projects") {{ page.projects }}
 	preview-link.now(href="/now" v-html="page.now")
-section.section.g.g--c
+section.section.g
 	dl.contact
 		dt
 			link-external(href="mailto:hello@euaaaio.ru") hello@euaaaio.ru
@@ -85,8 +85,13 @@ let { app, page } = mapStores({
 
 <style lang="stylus" scoped>
 dd
-	margin-bottom: 20px
 	color: var(--p-color-muted)
+	&:not(:last-child)
+		margin-bottom: 20px
+
+.section
+	@media (max-width: 736px)
+		grid-auto-rows: auto
 
 .bio,
 .general,
@@ -111,19 +116,22 @@ dd
 		display: none
 
 	@media (max-width: 736px)
-		grid-area: 1 / 1 / span 4 / span 1
+		grid-area: 1 / 1 / auto / span 1
+		height: 240px
 
 .bio
 	grid-row: span 2
 
 	@media (max-width: 736px)
-		grid-row: 7 / span 2
+		grid-row: auto
+		margin-top: 380px
 
 .consultancy
 	grid-row: 3 / span 9
 
 	@media (max-width: 736px)
-		grid-row: 10 / span 2
+		grid-row: auto
+		margin-top: 120px
 
 	> *
 		position: sticky
@@ -134,31 +142,40 @@ dd
 
 .general
 	grid-row: 6 / span 3
-	margin-top: 10px
 
 	@media (max-width: 736px)
-		grid-row: 14 / span 4
+		grid-row: auto
+		margin: 180px 0
 
 .language
 	margin-left: -73px
+
+	@media (max-width: 736px)
+		margin-left: -70px
 
 .post
 	grid-row: 14 / span 3
 
 	@media (max-width: 736px)
-		grid-row: 21 / span 3
+		grid-row: auto
 
 .now
 	grid-row: 14 / span 2
 
 	@media (max-width: 736px)
-		grid-row: 24 / span 2
+		grid-row: auto
+		margin: 120px 0
 
 .contact
 	grid-area: 1 / j / span 2 / span 2
 
+	@media (max-width: 736px)
+		grid-row: auto
+		margin-bottom: 120px
+
 .spotify
 	grid-area: 13 / e / span 2 / span 2
+	text-transform: none
 
 	dt a
 		display: block
@@ -168,12 +185,18 @@ dd
 		text-transform: none
 
 	@media (max-width: 736px)
-		grid-area: 5 / j
-		height: 240px
+		grid-row: auto
+		grid-column: j
+		margin-bottom: 120px
 
 .username
 	grid-area: 6 / j / span 2 / span 2
 	margin-top: 20px
+
+	@media (max-width: 736px)
+		grid-row: auto
+		margin: 0px 0px 80px
+		margin-bottom: 60px
 
 .follow
 	display: flex
@@ -195,10 +218,10 @@ dd
 
 	@media (max-width: 736px)
 		display: grid
-		grid-area: 8 / j / span 8
-		grid-template-rows: 180px 120px 60px
 		grid-template-columns: 1fr 1fr
-		gap: 60px 20px
+		grid-row: auto
+		grid-column: j
+		gap: 60px 0
 
 		ul:nth-child(1)
 			order: 5
@@ -218,5 +241,6 @@ dd
 		margin-left: -52px
 
 	@media (max-width: 736px)
-		grid-row: 18
+		grid-row: auto
+		margin-top: 120px
 </style>
