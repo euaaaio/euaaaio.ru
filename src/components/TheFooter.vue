@@ -2,10 +2,9 @@
 footer.footer.g
 	.copyright
 		p.mark ©
-		p
-			span.years 1995 — {{ year }}
-			br
-			br
+		p.year
+			span.start 1995 —&nbsp;
+			span.today {{ year }}
 			span.end(v-html="t.end")
 </template>
 
@@ -30,15 +29,22 @@ let t = useStore(footerMessages)
 
 	grid-area: j
 
-	gap: 180px
+	gap: 240px
 	justify-content: flex-end
 
 	height: 100vh
-	padding-bottom: 80px
+	padding-bottom: 120px
 
-.years
-	margin-left: -59px
+.year
+	position: relative
+
+.start
+	position: absolute
+	left: 0
+	transform: translateX(-100%)
 
 .end
+	display: block
+	margin-top: 20px
 	color: var(--p-color-muted)
 </style>

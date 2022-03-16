@@ -1,5 +1,5 @@
 <template lang="pug">
-section.section.g
+section.section.g#person
 	picture.picture
 		img
 	p.bio(v-html="page.bio")
@@ -8,13 +8,15 @@ section.section.g
 	dl.general
 		dt 026
 		dd {{ page.age }}
-		dt.language {{ page.en }} — {{ page.ru }}
+		dt.language
+			span.en {{ page.en }} —&nbsp;
+			span {{ page.ru }}
 		dd {{ page.languages }}
 		dt {{ page.spb }}, {{ page.russia }}
 		dd {{ page.location }}
 	preview-link.post(href="/projects") {{ page.projects }}
 	preview-link.now(href="/now" v-html="page.now")
-section.section.g
+section.section.g#connect
 	dl.contact
 		dt
 			link-external(href="mailto:hello@euaaaio.ru") hello@euaaaio.ru
@@ -93,6 +95,22 @@ dd
 	@media (max-width: 736px)
 		grid-auto-rows: auto
 
+#person
+	padding-bottom: 240px
+
+	@media (max-width: 736px)
+		padding-bottom: 0px
+		> *
+			grid-row: auto
+
+#connect
+	padding-bottom: 60px
+
+	@media (max-width: 736px)
+		padding-top: 300px
+		> *
+			grid-row: auto
+
 .bio,
 .general,
 .post
@@ -116,26 +134,24 @@ dd
 		display: none
 
 	@media (max-width: 736px)
-		grid-area: 1 / 1 / auto / span 1
+		grid-column-end: span 1
 		height: 240px
 
 .bio
 	grid-row: span 2
 
 	@media (max-width: 736px)
-		grid-row: auto
 		margin-top: 380px
 
 .consultancy
 	grid-row: 3 / span 9
 
 	@media (max-width: 736px)
-		grid-row: auto
 		margin-top: 120px
 
 	> *
 		position: sticky
-		top: 140px
+		top: 170px
 
 		@media (max-width: 736px)
 			position: inherit
@@ -144,33 +160,29 @@ dd
 	grid-row: 6 / span 3
 
 	@media (max-width: 736px)
-		grid-row: auto
 		margin: 180px 0
 
 .language
-	margin-left: -73px
+	position: relative
 
-	@media (max-width: 736px)
-		margin-left: -70px
+	.en
+		position: absolute
+		left: 0
+		transform: translateX(-100%)
 
 .post
-	grid-row: 14 / span 3
-
-	@media (max-width: 736px)
-		grid-row: auto
+	grid-row: 14 / span 2
 
 .now
 	grid-row: 14 / span 2
 
 	@media (max-width: 736px)
-		grid-row: auto
-		margin: 120px 0
+		margin-top: 120px
 
 .contact
 	grid-area: 1 / j / span 2 / span 2
 
 	@media (max-width: 736px)
-		grid-row: auto
 		margin-bottom: 120px
 
 .spotify
@@ -185,16 +197,14 @@ dd
 		text-transform: none
 
 	@media (max-width: 736px)
-		grid-row: auto
 		grid-column: j
 		margin-bottom: 120px
 
 .username
-	grid-area: 6 / j / span 2 / span 2
+	grid-area: 6 / j / span 1 / span 2
 	margin-top: 20px
 
 	@media (max-width: 736px)
-		grid-row: auto
 		margin: 0px 0px 80px
 		margin-bottom: 60px
 
@@ -219,7 +229,6 @@ dd
 	@media (max-width: 736px)
 		display: grid
 		grid-template-columns: 1fr 1fr
-		grid-row: auto
 		grid-column: j
 		gap: 60px 0
 
@@ -231,16 +240,17 @@ dd
 			order: 4
 
 .gpg
+	position: relative
 	grid-area: 14 / j / span 1 / span 2
 
 	dt
 		text-transform: uppercase
 
 	.mark
-		padding-right: 20px
-		margin-left: -52px
+		position: absolute
+		left: -20px
+		transform: translateX(-100%)
 
 	@media (max-width: 736px)
-		grid-row: auto
-		margin-top: 120px
+		margin-top: 180px
 </style>
