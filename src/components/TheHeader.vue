@@ -34,10 +34,10 @@ const isHome = computed(() => routerState.value?.route === 'IndexView')
 	&.--home
 		@media (max-width: 736px)
 			position: sticky
-			top: -290px
+			top: -210px
 
 			.header__name
-				margin-top: 300px
+				margin-top: 220px
 
 .header__name
 	grid-column: e
