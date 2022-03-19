@@ -107,7 +107,7 @@ dd
 	padding-bottom: 60px
 
 	@media (max-width: 736px)
-		padding-top: 300px
+		padding-top: 240px
 		> *
 			grid-row: auto
 
@@ -135,13 +135,13 @@ dd
 
 	@media (max-width: 736px)
 		grid-column-end: span 1
-		height: 240px
+		height: 180px
 
 .bio
 	grid-row: span 2
 
 	@media (max-width: 736px)
-		margin-top: 380px
+		margin-top: 280px
 
 .consultancy
 	grid-row: 3 / span 9
@@ -160,7 +160,7 @@ dd
 	grid-row: 6 / span 3
 
 	@media (max-width: 736px)
-		margin: 180px 0
+		margin: 180px 0 240px
 
 .language
 	position: relative
@@ -182,9 +182,6 @@ dd
 .contact
 	grid-area: 1 / j / span 2 / span 2
 
-	@media (max-width: 736px)
-		margin-bottom: 120px
-
 .spotify
 	grid-area: 13 / e / span 2 / span 2
 	text-transform: none
@@ -198,15 +195,14 @@ dd
 
 	@media (max-width: 736px)
 		grid-column: j
-		margin-bottom: 120px
+		margin: 180px 0px
 
 .username
 	grid-area: 6 / j / span 1 / span 2
 	margin-top: 20px
 
 	@media (max-width: 736px)
-		margin: 0px 0px 80px
-		margin-bottom: 60px
+		margin-top: 180px
 
 .follow
 	display: flex
@@ -231,6 +227,7 @@ dd
 		grid-template-columns: 1fr 1fr
 		grid-column: j
 		gap: 60px 0
+		margin-top: 120px
 
 		ul:nth-child(1)
 			order: 5
