@@ -1,5 +1,6 @@
 {
   "app": {
+    "lang": "en",
     "name": "Eduard Aksamitov",
     "spotify": "Spotify",
     "telegram": "Telegram",
@@ -20,7 +21,6 @@
   },
 
   "index": {
-    "metaLang": "ru",
     "metaTitle": "Eduard Aksamitov",
     "metaDescription": "Designer. Developer. Suprematist. From the first glimpses of imagination through digitality to the development of the present.",
 
