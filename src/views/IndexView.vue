@@ -3,14 +3,21 @@ section.section.g#person
 	picture.picture
 		img
 	p.bio(v-html="page.bio")
-	.consultancy(v-if="page.consultancy")
+	.consultancy(v-if="app.lang === 'ru'")
 		preview-link(href="/ru/consultancy" v-html="page.consultancy")
 	dl.general
 		dt 026
 		dd {{ page.age }}
-		dt.language
-			span.en {{ page.en }} —&nbsp;
+		dt.language(v-if="app.lang === 'ru'")
+			span.alt
+				a(href="/en") {{ page.en }}
+				| &nbsp;—&nbsp;
 			span {{ page.ru }}
+		dt.language(v-else)
+			span.alt
+				a(href="/ru") {{ page.ru }}
+				| &nbsp;—&nbsp;
+			span {{ page.en }}
 		dd {{ page.languages }}
 		dt {{ page.spb }}, {{ page.russia }}
 		dd {{ page.location }}
@@ -165,7 +172,7 @@ dd
 .language
 	position: relative
 
-	.en
+	.alt
 		position: absolute
 		left: 0
 		transform: translateX(-100%)
