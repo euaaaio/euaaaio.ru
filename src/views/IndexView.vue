@@ -33,7 +33,7 @@ section.section.g#connect
 	dl.spotify(v-if="spotify.isPlaying")
 		dt
 			icon-spotify
-			link-external(:href="spotify.url") {{ spotify.artists }}<br>{{ spotify.song }}
+			link-external(:href="spotify.url") {{ spotify.artists }} <br>{{ spotify.song }}
 		dd {{ page.spotify }}
 	dl.username
 		dt euaaaio
