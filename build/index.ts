@@ -60,7 +60,7 @@ async function build (): Promise<void> {
 	let { render } = await import(join(tempOutDir, './entry-server.js'))
 	// eslint-disable-next-line unicorn/prefer-json-parse-buffer
 	let manifest = JSON.parse(await fs.readFile(join(root, './dist/ssr-manifest.json'), 'utf-8'))
-	let prebuildedTemplate = await fs.readFile(join(outDir, './index.html'), 'utf-8')
+	let prebuiltTemplate = await fs.readFile(join(outDir, './index.html'), 'utf-8')
 
 	for (let url of routes) {
 		let fileName = url === '/' ? 'index.html' : `${url}/index.html`
@@ -70,8 +70,7 @@ async function build (): Promise<void> {
 
 		log(`Rendering links for ${color.bold(fileName)} page…`)
 		let preloadLinks = await renderPreloadLinks(ctx.modules, manifest)
-		html = prebuildedTemplate
-			.replace('<html>', `<html lang="${page.metaLang}">`)
+		html = prebuiltTemplate
 			.replace('<!--app-title-->', page.metaTitle)
 			.replace('<!--app-meta-->', `<meta name="description" content="${page.metaDescription}">`)
 			.replace('<!--app-html-->', html)
