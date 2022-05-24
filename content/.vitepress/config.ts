@@ -6,7 +6,7 @@ export default defineConfigWithTheme({
 	head: [
 		['link', { rel: 'icon', href: '/favicon.ico' }],
 		['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
-		['manifest', { href: '/manifest.webmanifest' }],
+		['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
 		['meta', { name: 'theme-color', content: '#000000', media: '(prefers-color-scheme: dark)' }],
 		['meta', { name: 'theme-color', content: '#e5e5e5', media: '(prefers-color-scheme: light)' }]
 	],
