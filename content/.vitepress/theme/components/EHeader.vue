@@ -1,20 +1,18 @@
 <template lang="pug">
-header.header.g(:class="{ '--home': isHome }")
-	a.header__name(:href="href") {{ messages.name }}
+header.header.g(:class="{ '--home': isRoot }")
+	a.header__name(:href="href") {{ name }}
 </template>
 
 <script lang="ts" setup>
-import { useStore } from '@nanostores/vue'
+import { useData, useRoute } from 'vitepress'
 import { computed } from 'vue'
 
-import { appMessages } from '../i18n'
-import { router } from '../router'
+const route = useRoute()
+const data = useData()
 
-const messages = useStore(appMessages)
-const routerState = useStore(router)
-
-const href = computed(() => `/${routerState.value?.params.lang || ''}`)
-const isHome = computed(() => routerState.value?.route === 'IndexView')
+const isRoot = computed(() => ['/', '/ru'].includes(route.path))
+const name = computed(() => data.site.value.title)
+const href = computed(() => data.localePath.value)
 </script>
 
 <style lang="stylus">

@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "jsx": "preserve",
     "strict": true,
     "noEmit": true,
     "allowJs": true,
@@ -10,21 +11,18 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@theme": ["./content/.vitepress/theme"]
+    },
     "lib": [
       "esnext",
       "dom"
-    ],
-    "types": [
-      "vite/client",
-      "spotify-api"
     ]
   },
   "include": [
-    "vite.config.*",
     "env.d.ts",
-    "src/**/*",
-    "src/**/*.vue",
-    "build/**/*",
-    "api/**/*"
+    "content/**/*",
+    "content/.vitepress/**/*"
   ]
 }

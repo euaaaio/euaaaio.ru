@@ -4,18 +4,9 @@ footer.footer.g
 		p.mark ©
 		p.year
 			span.start 1995 —&nbsp;
-			span.today {{ year }}
-			span.end(v-html="t.end")
+			span.today {{ new Date().getFullYear() }}
+			span.end — ready <br>to die
 </template>
-
-<script lang="ts" setup>
-import { useStore } from '@nanostores/vue'
-
-import { footerMessages } from '../i18n'
-
-let year = new Date().getFullYear()
-let t = useStore(footerMessages)
-</script>
 
 <style lang="stylus" scoped>
 .footer
