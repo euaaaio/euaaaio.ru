@@ -3,11 +3,11 @@
 	<template #bio>
 		Независимый <br>дизайнер, разработчик, супрематист <br><br><s>Фриланс</s>
 	</template>
-	<template #shortcutTop>
+	<!-- <template #shortcutTop>
 		<e-link-preview href="/ru/consultancy">
 			Доступен <br>для консультации
 		</e-link-preview>
-	</template>
+	</template> -->
 	<template #table>
 		<dd>Говорю</dd>
 		<dt>Санкт-Петербург, Россия</dt>

@@ -3,11 +3,6 @@
 	<template #bio>
 		Independent <br>designer, developer, suprematist <br><br><s>Freelance</s>
 	</template>
-	<template #shortcutTop>
-		<e-link-preview href="/consultancy">
-			Available <br>for consultancy
-		</e-link-preview>
-	</template>
 	<template #table>
 		<dd>Speaking</dd>
 		<dt>Saint-Petersburg, Russia</dt>
