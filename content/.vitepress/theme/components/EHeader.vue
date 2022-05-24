@@ -19,6 +19,7 @@ const href = computed(() => data.localePath.value)
 .header
 	position: sticky
 	top: 10px
+	z-index: 10000
 	grid-auto-rows: 0px
 	width: 100%
 	color: var(--p-color-black)
