@@ -2,94 +2,83 @@
 section.section.g#person
 	picture.picture
 		img
-	p.bio(v-html="page.bio")
-	.consultancy(v-if="app.lang === 'ru'")
-		preview-link(href="/ru/consultancy" v-html="page.consultancy")
+	p.bio Independent <br>designer, developer, suprematist <br><br><s>Freelance</s>
+	.consultancy(v-if="isLangRu")
+		e-link-preview(href="/ru/consultancy") page.consultancy
 	dl.general
-		dt 026
-		dd {{ page.age }}
-		dt.language(v-if="app.lang === 'ru'")
+		dt.language(v-if="isLangRu")
 			span.alt
-				a(href="/en") {{ page.en }}
+				a(href="/") English
 				| &nbsp;—&nbsp;
-			span {{ page.ru }}
+			span Russian
 		dt.language(v-else)
 			span.alt
-				a(href="/ru") {{ page.ru }}
+				a(href="/ru/") Russian
 				| &nbsp;—&nbsp;
-			span {{ page.en }}
-		dd {{ page.languages }}
-		dt {{ page.spb }}, {{ page.russia }}
-		dd {{ page.location }}
-	preview-link.post(href="/projects") {{ page.projects }}
-	preview-link.now(href="/now" v-html="page.now")
+			span English
+		dd Speaking
+		dt Saint-Petersburg, Russia
+		dd Living in
+	e-link-preview.post(href="/projects") page.projects
+	e-link-preview.now(href="/now") See what<br> i’m working on now
 section.section.g#connect
 	dl.contact
 		dt
-			link-external(href="mailto:hello@euaaaio.ru") hello@euaaaio.ru
-		dd {{ page.email }}
+			e-link-external(href="mailto:hello@euaaaio.ru") hello@euaaaio.ru
+		dd for what really matters
 		dt 00 911 785 85 70
-		dd {{ page.phone }}
-	dl.spotify(v-if="spotify.isPlaying")
-		dt
-			icon-spotify
-			link-external(:href="spotify.url") {{ spotify.artists }} <br>{{ spotify.song }}
-		dd {{ page.spotify }}
+		dd for silence
+	//- dl.spotify(v-if="spotify.isPlaying")
+	//- 	dt
+	//- 		icon-spotify
+	//- 		e-link-external(:href="spotify.url") {{ spotify.artists }} <br>{{ spotify.song }}
+	//- 	dd {{ page.spotify }}
 	dl.username
 		dt euaaaio
-		dd {{ page.username }}
+		dd as alias to find me
 	.follow
 		ul
 			li
-				link-external(href="https://open.spotify.com/user/bt3c50mixhdyv8qb56a6hpnbi") {{ app.spotify }}
+				e-link-external(href="https://open.spotify.com/user/bt3c50mixhdyv8qb56a6hpnbi") Spotify
 		ul
 			li
-				link-external(href="https://t.me/euaaaio") {{ app.telegram }}
+				e-link-external(href="https://t.me/euaaaio") Telegram
 			li
-				link-external(href="https://discordapp.com/users/euaaaio#2400") {{ app.discord }}
+				e-link-external(href="https://discordapp.com/users/euaaaio#2400") Discord
 		ul
 			li
-				link-external(href="https://instagram.com/euaaaio") {{ app.instagram }}
+				e-link-external(href="https://instagram.com/euaaaio") Instagram
 			li
-				link-external(href="https://facebook.com/euaaaio") {{ app.facebook }}
+				e-link-external(href="https://facebook.com/euaaaio") Facebook
 			li
-				link-external(href="https://twitter.com/euaaaio") {{ app.twitter }}
+				e-link-external(href="https://twitter.com/euaaaio") Twitter
 			li
-				link-external(href="https://vk.com/euaaaio") {{ app.vk }}
+				e-link-external(href="https://vk.com/euaaaio") VK
 		ul
 			li
-				link-external(href="https://pinterest.com/suprematist") {{ app.pinterest }}
+				e-link-external(href="https://pinterest.com/suprematist") Pinterest
 			li
-				link-external(href="https://behance.com/euaaaio") {{ app.behance }}
+				e-link-external(href="https://behance.com/euaaaio") Behance
 			li
-				link-external(href="https://dribbble.com/euaaaio") {{ app.dribbble }}
+				e-link-external(href="https://dribbble.com/euaaaio") Dribbble
 			li
-				link-external(href="https://ello.co/euaaaio") {{ app.ello }}
+				e-link-external(href="https://ello.co/euaaaio") Ello
 		ul
 			li
-				link-external(href="https://github.com/euaaaio") {{ app.github }}
+				e-link-external(href="https://github.com/euaaaio") Github
 	dl.gpg
 		dt
 			span.mark GPG
 			span 8A96 72CC F199 75E6
-		dd {{ page.gpg }}
+		dd for verifying
 </template>
 
 <script lang="ts" setup>
-import { mapStores } from '@nanostores/vue'
+import { computed } from 'vue'
+import { useData } from 'vitepress'
 
-import { appMessages, indexMessages } from '../i18n'
-import { useSpotifyNow } from '../composables/useSpotifyNow'
-import LinkExternal from '../components/LinkExternal.vue'
-import IconSpotify from '../components/IconSpotify.vue'
-import PreviewLink from '../components/PreviewLink.vue'
-
-let spotify = useSpotifyNow()
-
-let { app, page } = mapStores({
-	app: appMessages,
-	page: indexMessages
-})
+const data = useData()
+const isLangRu = computed(() => data.lang.value === 'ru_RU')
 </script>
 
 <style lang="stylus" scoped>
@@ -189,20 +178,20 @@ dd
 .contact
 	grid-area: 1 / j / span 2 / span 2
 
-.spotify
-	grid-area: 13 / e / span 2 / span 2
-	text-transform: none
+// .spotify
+// 	grid-area: 13 / e / span 2 / span 2
+// 	text-transform: none
 
-	dt a
-		display: block
-		margin: 10px 0
+// 	dt a
+// 		display: block
+// 		margin: 10px 0
 
-	dd
-		text-transform: none
+// 	dd
+// 		text-transform: none
 
-	@media (max-width: 736px)
-		grid-column: j
-		margin: 180px 0px
+// 	@media (max-width: 736px)
+// 		grid-column: j
+// 		margin: 180px 0px
 
 .username
 	grid-area: 6 / j / span 1 / span 2

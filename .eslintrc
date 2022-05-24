@@ -1,12 +1,4 @@
 {
 	"extends": "@postanu/eslint-config/vue",
-	"overrides": [
-		{
-			"files": ["./build/**/*.ts"],
-			"rules": {
-				"security/detect-non-literal-fs-filename": "off",
-				"security/detect-non-literal-require": "off"
-			}
-		}
-	]
+	"ignorePatterns": ["!content/.vitepress"]
 }

@@ -1,9 +1,13 @@
 [
   {
     "path": [
+      "./dist/index.html",
+      "./dist/assets/*.css",
       "./dist/assets/app.*.js",
-      "./dist/assets/vendor.*.js"
+      "./dist/assets/index.md.*.js",
+      "./dist/assets/chunks/ESectionConnect.*.js",
+      "!./dist/assets/*.lean.js"
     ],
-    "limit": "30 kB"
+    "limit": "40 kB"
   }
 ]
