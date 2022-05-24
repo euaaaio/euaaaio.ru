@@ -2,7 +2,7 @@ import { defineConfigWithTheme } from 'vitepress'
 
 export default defineConfigWithTheme({
 	outDir: '../dist',
-	description: 'Designer, developer, suprematist. I research and create things. I help launch, improve and update products and services. Quickly understand issues and solve problems.',
+	description: 'Designer, developer, suprematist. I help launch, improve and update products and services. Quickly understand issues and solve problems.',
 	head: [
 		['link', { rel: 'icon', href: '/favicon.ico' }],
 		['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
