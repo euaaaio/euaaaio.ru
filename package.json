@@ -6,7 +6,7 @@
     "build": "vitepress build content",
     "test": "vue-tsc --noEmit && eslint ./content && nr build && size-limit"
   },
-  "author": "Eduard Aksamitov <e@edaks.co>",
+  "author": "Eduard Aksamitov <e@euaaaio.co>",
   "license": "MIT",
   "homepage": "https://euaaaio.ru",
   "repository": "euaaaio/euaaaio.ru",
