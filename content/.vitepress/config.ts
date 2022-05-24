@@ -20,5 +20,12 @@ export default defineConfigWithTheme({
 			title: 'Эдуард Аксамитов',
 			description: 'Дизайнер, разработчик, супрематист. Помогаю запускать, улучшать и обновлять продукты и сервисы. Быстро разбираться в вопросах и решать проблемы.'
 		}
+	},
+	// https://github.com/vuejs/vitepress/issues/631
+	themeConfig: {
+		locales: {
+			'/': {},
+			'/ru/': {}
+		}
 	}
 })
