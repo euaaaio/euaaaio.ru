@@ -37,7 +37,7 @@
 	</template>
 	<template #username>
 		<dt>euaaaio</dt>
-		<dd>как псевдоним, чтобы найти меня</dd>
+		<dd>как псевдоним</dd>
 	</template>
 	<template #follow>
 		<ul>
