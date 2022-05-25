@@ -3,11 +3,11 @@
 	<template #bio>
 		Независимый <br>дизайнер, разработчик, супрематист <br><br><s>Фриланс</s>
 	</template>
-	<!-- <template #shortcutTop>
-		<e-link-preview href="/ru/consultancy">
+	<template #shortcutTop>
+		<e-link-preview href="/ru/consultancy/">
 			Доступен <br>для консультации
 		</e-link-preview>
-	</template> -->
+	</template>
 	<template #table>
 		<dd>Говорю</dd>
 		<dt>Санкт-Петербург, Россия</dt>
@@ -18,11 +18,11 @@
 			Для Супрематиста собрали коллекцию работ женщин Супрематистов в&nbsp;виде ветки в&nbsp;Твиттере и&nbsp;доски на&nbsp;Пинтересте.
 		</e-link-preview>
 	</template>
-	<!-- <template #shortcutBottom>
-		<e-link-preview href="/ru/now">
+	<template #shortcutBottom>
+		<e-link-preview href="/ru/now/">
 			Посмотреть <br>над чем работаю сейчас
 		</e-link-preview>
-	</template> -->
+	</template>
 </e-section-person>
 <e-section-connect>
 	<template #contact>
@@ -101,5 +101,3 @@ import ESectionPerson from '@theme/components/ESectionPerson.vue'
 import ESectionConnect from '@theme/components/ESectionConnect.vue'
 </script>
 
-<style lang="stylus" scoped>
-</style>

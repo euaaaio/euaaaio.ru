@@ -27,5 +27,10 @@ export default defineConfigWithTheme({
 			'/': {},
 			'/ru/': {}
 		}
+	},
+	markdown: {
+		anchor: {
+			permalink: false
+		}
 	}
 })

@@ -13,11 +13,11 @@
 			For Suprematist, we created a cool collection of Suprematist women’s artworks in the form of a Twitter thread and Pinterest board.
 		</e-link-preview>
 	</template>
-	<!-- <template #shortcutBottom>
-		<e-link-preview href="/now">
+	<template #shortcutBottom>
+		<e-link-preview href="/now/">
 			See what <br>I’m working on now
 		</e-link-preview>
-	</template> -->
+	</template>
 </e-section-person>
 <e-section-connect>
 	<template #contact>
