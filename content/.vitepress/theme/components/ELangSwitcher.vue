@@ -1,16 +1,27 @@
 <template lang="pug">
 a.lang-switcher(:href="href")
-	span English
+	span {{ t.lang }}
 		| &nbsp;—&nbsp;
-	span Russian
+	span {{ t.lang_alt }}
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 
-const data = useData()
-const href = computed(() => data.lang.value === 'en-US' ? '/ru/' : '/')
+const { lang } = useData()
+const href = computed(() => lang.value === 'en-US' ? '/ru/' : '/')
+const t = computed(() => {
+	return lang.value === 'en-US'
+		? {
+			lang: 'English',
+			lang_alt: 'Russian'
+		}
+		: {
+			lang: 'Русский',
+			lang_alt: 'English'
+		}
+})
 </script>
 
 <style lang="stylus" scoped>
