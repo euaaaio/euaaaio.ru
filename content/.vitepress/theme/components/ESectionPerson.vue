@@ -1,7 +1,5 @@
 <template lang="pug">
 section.section.g#person
-	//- picture.picture
-	//- 	img
 	p.bio
 		slot(name="bio")
 	.consultancy(v-if="slots.shortcutTop")
