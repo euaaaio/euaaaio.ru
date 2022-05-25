@@ -14,8 +14,8 @@
 		<dd>Нахожусь</dd>
 	</template>
 	<template #article>
-		<e-link-preview external href="https://twitter.com/euaaaio/status/1468361099246514189">
-			Выпустил Vue Nanostores 0.5 с несколькими новыми функциями.
+		<e-link-preview external href="https://www.pinterest.ru/suprematistcc/women-of-suprematism/">
+			Для Супрематиста собрали коллекцию работ женщин Супрематистов в&nbsp;виде ветки в&nbsp;Твиттере и&nbsp;доски на&nbsp;Пинтересте.
 		</e-link-preview>
 	</template>
 	<!-- <template #shortcutBottom>
