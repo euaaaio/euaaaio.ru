@@ -27,9 +27,9 @@
 <e-section-connect>
 	<template #contact>
 		<dt>
-			<e-link-external href="mailto:hello@euaaaio.ru">
+			<a href="mailto:hello@euaaaio.ru" target="_blank" rel="noopener">
 				hello@euaaaio.ru
-			</e-link-external>
+			</a>
 		</dt>
 		<dd>для действительно важного</dd>
 		<dt>00 911 785 85 70</dt>

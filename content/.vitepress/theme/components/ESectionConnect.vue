@@ -49,8 +49,6 @@ section.section.g#connect
 		a
 			display: inline-block
 			padding: 10px 0
-			text-decoration: underline
-			text-decoration-color: var(--p-color-border)
 
 		&:first-child
 			a
