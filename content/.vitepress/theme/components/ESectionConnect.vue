@@ -44,15 +44,12 @@ section.section.g#connect
 
 	:deep(ul)
 		flex: 1
+		margin-top: -10px
 
 	:deep(li)
 		a
 			display: inline-block
 			padding: 10px 0
-
-		&:first-child
-			a
-				padding-top: 0
 
 	@media (max-width: 736px)
 		display: grid
