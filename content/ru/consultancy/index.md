@@ -29,7 +29,7 @@ description:
 	</section>
 	<section class="consultancy__section g" id="who">
 		<p class="p about">Специализируюсь на&nbsp;консультациях и&nbsp;управлении проектами, где важен баланс дизайна и&nbsp;разработки.</p>
-		<!-- <e-link-preview class="now" href="/ru/now">Посмотреть <br>над чем работаю сейчас</e-link-preview> -->
+		<e-link-preview class="now" href="/ru/now/">Посмотреть <br>над чем работаю сейчас</e-link-preview>
 		<div class="details">
 			<p class="p">Сооснователь сервиса для публикации и&nbsp;планирования постов в&nbsp;социальные сети — <e-link-external href="https://postanu.com">Постаню</e-link-external>.</p>
 			<p class="p">Автор англоязычного блога о&nbsp;фундаментальных основах и&nbsp;темных оттенках дизайна сквозь время — <e-link-external href="https://absorptie.cc">Абсорбция</e-link-external>.</p>
