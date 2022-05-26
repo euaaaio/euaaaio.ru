@@ -1,3 +1,11 @@
+---
+head:
+  - - link
+    - rel: alternate
+      hreflang: ru-RU
+      href: https://euaaaio.ru/ru/
+---
+
 <div></div>
 <e-section-person>
 	<template #bio>

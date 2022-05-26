@@ -1,5 +1,10 @@
 ---
 title: Над чем работаю сейчас
+head:
+  - - link
+    - rel: alternate
+      hreflang: en-US
+      href: https://euaaaio.ru/now/
 article: true
 ---
 

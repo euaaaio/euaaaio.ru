@@ -3,6 +3,11 @@ title: Available for consultancy
 description:
   I help launch, improve and update products and services.
   Quickly understand issues and solve problems.
+head:
+  - - link
+    - rel: alternate
+      hreflang: ru-RU
+      href: https://euaaaio.ru/ru/consultancy/
 ---
 
 <div class="consultancy">

@@ -3,6 +3,11 @@ title: Доступен для консультации
 description:
   Помогаю запускать, улучшать и обновлять продукты и сервисы.
   Быстро разбираться в вопросах и решать проблемы.
+head:
+  - - link
+    - rel: alternate
+      hreflang: en-US
+      href: https://euaaaio.ru/consultancy/
 ---
 
 <div class="consultancy">
