@@ -34,9 +34,9 @@ description:
 			<p class="p">Сооснователь сервиса для публикации и&nbsp;планирования постов в&nbsp;социальные сети — <e-link-external href="https://postanu.com">Постаню</e-link-external>.</p>
 			<p class="p">Автор англоязычного блога о&nbsp;фундаментальных основах и&nbsp;темных оттенках дизайна сквозь время — <e-link-external href="https://absorptie.cc">Абсорбция</e-link-external>.</p>
 			<p class="p">Создатель и&nbsp;куратор сообщества о&nbsp;супрематизме как направлении в&nbsp;искусстве — <e-link-external href="https://suprematist.cc">Супрематист</e-link-external>.</p>
-			<p class="p">Разработчик и&nbsp;мейнтейнер инструментов для разработчиков с&nbsp;открытым исходным кодом:</p>
-			<p class="p">фреймворка для создания приложений с&nbsp;совместной работой в&nbsp;реальном времени — <e-link-external href="https://github.com/logux">Логакс</e-link-external>;</p>
-			<p class="p">миниатюрного стейт-менеджера для Реакта, Преакта, Вью, Свелте и&nbsp;чистого&nbsp;JS — <e-link-external href="https://github.com/nanostores">Наносторс</e-link-external>.</p>
+			<p class="p">Разработчик и&nbsp;мейнтейнер инструментов с&nbsp;открытым исходным кодом для разработчиков:</p>
+			<p class="p">Фреймворка для создания приложений с&nbsp;совместной работой в&nbsp;реальном времени — <e-link-external href="https://github.com/logux">Логакс</e-link-external>;</p>
+			<p class="p">Миниатюрного стейт-менеджера для Реакта, Преакта, Вью, Свелте и&nbsp;чистого&nbsp;JS — <e-link-external href="https://github.com/nanostores">Наносторс</e-link-external>.</p>
 		</div>
 	</section>
 	<section class="consultancy__section g" id="questions">
