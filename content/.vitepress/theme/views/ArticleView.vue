@@ -2,9 +2,15 @@
 .article-view.g
 	article.article
 		slot
+		e-last-updated(v-if="page.frontmatter.lastUpdated")
 </template>
 
 <script lang="ts" setup>
+import { useData } from 'vitepress'
+
+import ELastUpdated from '../components/ELastUpdated.vue'
+
+const { page } = useData()
 </script>
 
 <style lang="stylus" scoped>

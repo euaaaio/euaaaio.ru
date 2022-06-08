@@ -9,6 +9,7 @@ head:
       hreflang: en-US
       href: https://euaaaio.ru/now/
 article: true
+lastUpdated: true
 ---
 
 # Над чем работаю сейчас

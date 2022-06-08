@@ -9,6 +9,7 @@ head:
       hreflang: ru-RU
       href: https://euaaaio.ru/ru/now/
 article: true
+lastUpdated: true
 ---
 
 # What I’m working on now

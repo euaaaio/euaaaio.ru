@@ -24,13 +24,18 @@ export default defineConfigWithTheme({
 	// https://github.com/vuejs/vitepress/issues/631
 	themeConfig: {
 		locales: {
-			'/': {},
-			'/ru/': {}
+			'/': {
+				lastUpdated: 'Last updated'
+			},
+			'/ru/': {
+				lastUpdated: 'Обновлено последний раз'
+			}
 		}
 	},
 	markdown: {
 		anchor: {
 			permalink: false
 		}
-	}
+	},
+	lastUpdated: true
 })
