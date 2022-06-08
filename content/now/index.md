@@ -1,5 +1,8 @@
 ---
 title: What I’m working on now
+description:
+  Telling what I'm working on now and will be working on later.
+  Publishing secret things. Keeping the list up to date.
 head:
   - - link
     - rel: alternate
