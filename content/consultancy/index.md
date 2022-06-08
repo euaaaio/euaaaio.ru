@@ -21,7 +21,7 @@ head:
 		</p>
 		<p class="article__enumeration">
 			<strong>About launching and updating:</strong>
-			<span>processes, phases, specialists, hiring, budget and understanding the task. I will tell you what to do, how to do it and how much time and money it will require.</span>
+			<span>processes, phases, specialists, hiring, budget and understanding the task. I will tell you what to do, how to do and how much time and money it will take to update the old or launch a new product.</span>
 		</p>
 		<p class="article__enumeration">
 			<strong>About design solutions:</strong>
@@ -49,21 +49,22 @@ head:
 			<dt>What is the format of the meeting?</dt>
 			<dd>
 				<p>One-on-one chat in Discord or any other messaging service.</p>
+				<p>I don't design or write text or code during the consultation. don't record or outline the meeting.</p>
+				<p>You can record it, but you cannot publish it.</p>
 			</dd>
 			<dt>How to discuss everything and not to miss anything?</dt>
 			<dd>
 				<p>Before the consultation, I will ask you to take a survey or write answers to a few questions.</p>
-				<p>I don't design or write text or code during the consultation. I don't record or outline the meeting. You can record it, but you cannot publish it.</p>
-			</dd>
-			<dt>How and when can we start?</dt>
-			<dd>
-				<p>Email, Discord or Telegram me to answer clarifying questions, choose a date and time, get an invoice and send prepayment.</p>
-				<p>Appointments are usually booked a week in advance, and prepayment is 100%.</p>
 			</dd>
 			<dt>How many meetings are needed?</dt>
 			<dd>
 				<p>It depends on your task. One meeting to get a quick understanding of an issue. Two to define the problem and start the processes. Three or four to create and release a new product. Once a week, for intensive long-distance work.</p>
 				<p>If you need more, you can hire me as a temporary Art director.</p>
+			</dd>
+			<dt>How and when can we start?</dt>
+			<dd>
+				<p><e-link-external href="mailto:e@euaaaio.ru?subject=Consultancy">Email</e-link-external>, <e-link-external href="https://discordapp.com/users/euaaaio#2400">Discord</e-link-external> or <e-link-external href="https://t.me/euaaaio">Telegram</e-link-external> me to answer clarifying questions, choose a date and time, get an invoice and send prepayment.</p>
+				<p>Appointments are usually booked a week in advance, and prepayment is 100%.</p>
 			</dd>
 		</dl>
 	</section>
@@ -75,7 +76,7 @@ head:
 			</div>
 			<div>
 				<dt>≥ $2000</dt>
-				<dd>to hire me <br>as a temporary Art director.</dd>
+				<dd>to hire me <br>as a temporary Art director.</dd>
 			</div>
 		</dl>
 	</section>
