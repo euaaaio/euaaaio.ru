@@ -1,4 +1,4 @@
-import { nextTick, watch } from 'vue'
+import { watch } from 'vue'
 import type { Router, SiteData } from 'vitepress'
 import type { Ref } from 'vue'
 
@@ -8,6 +8,9 @@ export function useBrowserLanguage (data: Ref<SiteData>, router: Router): void {
 		let destroy = watch(
 			() => router.route.component,
 			() => {
+				if (router.route.path.length > 4) {
+					destroy()
+				}
 				if (
 					router.route.component !== null &&
 					Object.keys(langs).includes(router.route.path)
