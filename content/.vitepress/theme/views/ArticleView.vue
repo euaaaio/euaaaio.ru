@@ -1,13 +1,16 @@
 <template lang="pug">
 .article-view.g
-	article.article
-		slot
-		e-last-updated(v-if="page.frontmatter.lastUpdated")
+	article.article.g
+		.article-content
+			slot
+			e-last-updated(v-if="page.frontmatter.lastUpdated")
+		e-article-date.article__date(v-if="page.frontmatter.date")
 </template>
 
 <script lang="ts" setup>
 import { useData } from 'vitepress'
 
+import EArticleDate from '../components/EArticleDate.vue'
 import ELastUpdated from '../components/ELastUpdated.vue'
 
 const { page } = useData()
@@ -18,7 +21,9 @@ const { page } = useData()
 	grid-auto-rows: minmax(60px, auto)
 
 .article
-	grid-column: j / span 2
+	position: relative
+	grid-column: span 12
+	grid-auto-rows: minmax(60px, auto)
 
 	:deep(h1)
 		position: sticky
@@ -34,13 +39,22 @@ const { page } = useData()
 		& + *
 			margin-top: 180px
 
-	:deep(a[target="_blank"])
-		text-decoration: underline
-		text-decoration-color: var(--p-color-border)
-
+	:deep(p),
 	:deep(li)
 		padding-bottom: 20px
 
 		&:first-letter
 			padding-left: 30px
+
+	:deep(a[target="_blank"])
+		text-decoration: underline
+		text-decoration-color: var(--p-color-border)
+
+.article-content
+	grid-column: j / span 2
+
+.article__date
+	position: absolute
+	grid-column: h
+	color: var(--p-color-muted)
 </style>
