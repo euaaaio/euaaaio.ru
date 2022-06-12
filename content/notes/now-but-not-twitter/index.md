@@ -29,6 +29,6 @@ a [“now” page](https://cmhb.de/now). There he writes about his work, projec
 experiments, studies, hobbies, and cats. All in one list with the date
 of the last updated.
 
-I made one for myself and now keep it up to date: https://euaaaio.ru/ru/now/.
+I made one for myself and now keep it up to date: https://euaaaio.ru/now/.
 
 Catalog of the “Now” pages, curated by Derek Sivers: https://nownownow.com.
