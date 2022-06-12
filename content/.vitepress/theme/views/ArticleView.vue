@@ -21,7 +21,6 @@ const { page } = useData()
 	grid-auto-rows: minmax(60px, auto)
 
 .article
-	position: relative
 	grid-column: span 12
 	grid-auto-rows: minmax(60px, auto)
 
@@ -59,5 +58,7 @@ const { page } = useData()
 	color: var(--p-color-muted)
 
 	@media (max-width: 736px)
-		padding-top: 220px
+		position: inherit
+		grid-column: j / span 2
+		margin-top: 180px
 </style>
