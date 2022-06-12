@@ -21,8 +21,12 @@ const { page } = useData()
 	grid-auto-rows: minmax(60px, auto)
 
 .article
+	position: relative
 	grid-column: span 12
 	grid-auto-rows: minmax(60px, auto)
+
+	@media (max-width: 736px)
+		position: inherit
 
 	:deep(h1)
 		position: sticky
