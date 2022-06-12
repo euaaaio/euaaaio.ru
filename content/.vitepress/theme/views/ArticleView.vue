@@ -57,4 +57,7 @@ const { page } = useData()
 	position: absolute
 	grid-column: h
 	color: var(--p-color-muted)
+
+	@media (max-width: 736px)
+		padding-top: 220px
 </style>
