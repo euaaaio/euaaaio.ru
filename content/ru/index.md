@@ -22,8 +22,9 @@ head:
 		<dd>Нахожусь</dd>
 	</template>
 	<template #article>
-		<e-link-preview external href="https://www.pinterest.ru/suprematistcc/women-of-suprematism/">
-			Для Супрематиста собрали коллекцию работ женщин Супрематистов в&nbsp;виде ветки в&nbsp;Твиттере и&nbsp;доски на&nbsp;Пинтересте.
+		<e-link-preview href="/ru/notes/now-but-not-twitter/">
+			<strong>Сейчас, но не Твиттер</strong>
+			Следить за последними обновлениями и событиями людей в социальных сетях трудно.
 		</e-link-preview>
 	</template>
 	<template #shortcutBottom>

@@ -22,8 +22,9 @@ head:
 		<dd>Living in</dd>
 	</template>
 	<template #article>
-		<e-link-preview external href="https://www.pinterest.ru/suprematistcc/women-of-suprematism/">
-			For Suprematist, we created a cool collection of Suprematist women’s artworks in the form of a Twitter thread and Pinterest board.
+		<e-link-preview href="/notes/now-but-not-twitter/">
+			<strong>Now, but not Twitter</strong>
+			Following people's latest updates and activities on social media is difficult.
 		</e-link-preview>
 	</template>
 	<template #shortcutBottom>
