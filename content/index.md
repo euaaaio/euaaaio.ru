@@ -24,7 +24,7 @@ head:
 	<template #article>
 		<e-link-preview href="/notes/now-but-not-twitter/">
 			<strong>Now, but not Twitter</strong>
-			Following people's latest updates and activities on social media is difficult.
+			Following people's latest updates and activities on social media is challenging.
 		</e-link-preview>
 	</template>
 	<template #shortcutBottom>
