@@ -37,7 +37,7 @@ head:
 		<e-link-preview class="now" href="/now/">See what <br>I’m working on now</e-link-preview>
 		<div class="details">
 			<p class="p">Co-founder of a service for publishing and scheduling posts to social networks — <e-link-external href="https://postanu.com">Postanu</e-link-external>.</p>
-			<p class="p">Creator and curator of the community about Suprematism as an art movement — <e-link-external href="https://suprematist.cc">Suprematis</e-link-external>.</p>
+			<p class="p">Creator and curator of the community about Suprematism as an art movement — <e-link-external href="https://suprematist.cc">Suprematist</e-link-external>.</p>
 			<p class="p">Developer and maintainer of open source tools for developers:</p>
 			<p class="p">A framework for building real-time collaborative applications — <e-link-external href="https://github.com/logux">Logux</e-link-external>;</p>
 			<p class="p">A tiny state manager for React, Preact, Vue, Svelte and pure JS — <e-link-external href="https://github.com/nanostores">Nanostores</e-link-external>.</p>
