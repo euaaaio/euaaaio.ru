@@ -19,7 +19,7 @@ head:
 	<template #table>
 		<dd>Speaking</dd>
 		<dt>Saint-Petersburg, Russia</dt>
-		<dd>Living in</dd>
+		<dd>Currently in</dd>
 	</template>
 	<template #article>
 		<e-link-preview href="/notes/now-but-not-twitter/">
