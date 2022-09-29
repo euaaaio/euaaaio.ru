@@ -16,7 +16,6 @@ lastUpdated: true
 
 - Consulting several small businesses: help build the process of working online.
 - Developing the first public version of the [Postanu](https://postanu.com).
-- Developing a relaunch of the Grid Journal with a new name - [Absorption](https://absorptie.cc).
 - Preparing a secret project for [Suprematist](https://suprematist.cc).
 - Experimenting with visual techniques in the design of collaborative applications.
 - I don’t give up working on my website: I layout ready-made layouts, draw new ones.
