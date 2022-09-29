@@ -92,6 +92,9 @@ head:
 		</ul>
 		<ul>
 			<li>
+				<e-link-external href="https://www.linkedin.com/in/euaaaio/">Линкедин</e-link-external>
+			</li>
+			<li>
 				<e-link-external href="https://github.com/euaaaio">Гитхаб</e-link-external>
 			</li>
 		</ul>
