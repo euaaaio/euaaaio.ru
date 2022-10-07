@@ -36,7 +36,6 @@ head:
 		<p class="p about">Специализируюсь на&nbsp;консультациях и&nbsp;управлении проектами, где важен баланс дизайна и&nbsp;разработки.</p>
 		<e-link-preview class="now" href="/ru/now/">Посмотреть <br>над чем работаю сейчас</e-link-preview>
 		<div class="details">
-			<p class="p">Сооснователь сервиса для публикации и&nbsp;планирования постов в&nbsp;социальные сети — <e-link-external href="https://postanu.com">Постаню</e-link-external>.</p>
 			<p class="p">Создатель и&nbsp;куратор сообщества о&nbsp;супрематизме как направлении в&nbsp;искусстве — <e-link-external href="https://suprematist.cc">Супрематист</e-link-external>.</p>
 			<p class="p">Разработчик и&nbsp;мейнтейнер инструментов с&nbsp;открытым исходным кодом для разработчиков:</p>
 			<p class="p">Фреймворка для создания приложений с&nbsp;совместной работой в&nbsp;реальном времени — <e-link-external href="https://github.com/logux">Логакс</e-link-external>;</p>
@@ -153,7 +152,7 @@ head:
 		> p
 			padding-bottom: 0px
 
-		> p:nth-child(1), p:nth-child(3)
+		> p:nth-child(1)
 			padding-bottom: 60px
 
 		> p:nth-child(2)
