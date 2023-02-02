@@ -25,6 +25,7 @@ export function useBrowserLanguage (data: Ref<SiteData>, router: Router): void {
 					)
 
 					let userLanguages = navigator.languages
+					// eslint-disable-next-line unicorn/no-typeof-undefined
 					if (typeof navigator.languages === 'undefined') {
 						userLanguages = [navigator.language]
 					}
