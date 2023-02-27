@@ -2,6 +2,7 @@
 section.section.g#connect
 	dl.contact
 		slot(name="contact")
+	slot(name="spotify")
 	dl.username
 		slot(name="username")
 	.follow
@@ -11,7 +12,6 @@ section.section.g#connect
 </template>
 
 <script lang="ts" setup>
-
 </script>
 
 <style lang="stylus" scoped>

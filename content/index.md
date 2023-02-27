@@ -48,10 +48,13 @@ head:
 		<dt>euaaaio</dt>
 		<dd>as alias to find me</dd>
 	</template>
+	<template #spotify>
+		<e-spotify-now>playing on Spotify</e-spotify-now>
+	</template>
 	<template #follow>
 		<ul>
 			<li>
-				<e-link-external href="https://open.spotify.com/user/bt3c50mixhdyv8qb56a6hpnbi">Spotify</e-link-external>
+				<e-link-external href="https://open.spotify.com/user/31wybngwveld3gfnz3yf42szjtn4?si=2c5081eb8d1844ed">Spotify</e-link-external>
 			</li>
 		</ul>
 		<ul>
@@ -109,6 +112,7 @@ head:
 </e-section-connect>
 
 <script setup>
+import ESpotifyNow from '@theme/components/ESpotifyNow.vue'
 import ESectionPerson from '@theme/components/ESectionPerson.vue'
 import ESectionConnect from '@theme/components/ESectionConnect.vue'
 </script>

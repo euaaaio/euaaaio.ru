@@ -48,6 +48,9 @@ head:
 		<dt>euaaaio</dt>
 		<dd>как псевдоним</dd>
 	</template>
+	<template #spotify>
+		<e-spotify-now>играет на Спотифае</e-spotify-now>
+	</template>
 	<template #follow>
 		<ul>
 			<li>
@@ -109,6 +112,7 @@ head:
 </e-section-connect>
 
 <script setup>
+import ESpotifyNow from '@theme/components/ESpotifyNow.vue'
 import ESectionPerson from '@theme/components/ESectionPerson.vue'
 import ESectionConnect from '@theme/components/ESectionConnect.vue'
 </script>

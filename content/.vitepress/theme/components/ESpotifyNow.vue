@@ -1,0 +1,42 @@
+<template lang="pug">
+dl.spotify(v-if="spotify.isPlaying")
+	dt
+		svg.spotify__icon(
+			xmlns="http://www.w3.org/2000/svg"
+			width="20"
+			height="20"
+		)
+			path(d="M10 .033C4.494.033.03 4.497.03 10.003s4.464 9.969 9.97 9.969 9.97-4.463 9.97-9.97c0-5.505-4.464-9.968-9.97-9.968zm4.572 14.379a.621.621 0 0 1-.855.206c-2.341-1.43-5.288-1.754-8.758-.961a.622.622 0 0 1-.276-1.212c3.797-.868 7.055-.494 9.683 1.112.292.18.385.562.206.855zm1.22-2.715a.777.777 0 0 1-1.07.256c-2.68-1.647-6.764-2.124-9.934-1.162a.778.778 0 0 1-.451-1.487c3.62-1.099 8.121-.567 11.199 1.324a.777.777 0 0 1 .256 1.069zm.104-2.827C12.683 6.962 7.383 6.786 4.314 7.717a.932.932 0 1 1-.54-1.784c3.52-1.07 9.375-.863 13.074 1.333a.931.931 0 1 1-.951 1.604z")
+		e-link-external.spotify__link(:href="spotify.url") {{ spotify.artists }} <br>{{ spotify.song }}
+	dd
+		slot
+</template>
+
+<script setup lang="ts">
+import { useSpotifyNow } from '../composables/useSpotifyNow.js'
+
+let spotify = useSpotifyNow()
+</script>
+
+<style lang="stylus" scoped>
+.spotify
+	grid-area: 13 / e / span 2 / span 2
+	text-transform: none
+
+	dt a
+		display: block
+		margin: 10px 0
+
+	dd
+		text-transform: none
+
+	@media (max-width: 736px)
+		grid-column: j
+		margin: 180px 0px
+
+.spotify__icon
+	vertical-align: top
+
+.spotify__link
+	text-decoration: none
+</style>

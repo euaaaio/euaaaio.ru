@@ -4,3 +4,7 @@ declare module '*.vue' {
 	let component: ComponentOptions
 	export default component
 }
+
+interface ImportMeta {
+	readonly env: ImportMetaEnv
+}
