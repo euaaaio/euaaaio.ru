@@ -1,7 +1,8 @@
 <script lang="ts">
-import { defineComponent, h } from 'vue'
-import { useRoute } from 'vitepress'
 import type { VNodeChild } from 'vue'
+
+import { useRoute } from 'vitepress'
+import { defineComponent, h } from 'vue'
 
 export default defineComponent({
 	name: 'EContent',

@@ -1,16 +1,14 @@
 <template lang="pug">
 header.header.g
-	a.header__name(:href="href") {{ name }}
+	a.header__name(href="/") {{ name }}
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { computed } from 'vue'
 
 const data = useData()
-
 const name = computed(() => data.site.value.title)
-const href = computed(() => data.localePath.value)
 </script>
 
 <style lang="stylus">

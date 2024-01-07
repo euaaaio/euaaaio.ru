@@ -1,5 +1,9 @@
 <template lang="pug">
-a.link-preview.--external(v-if="external" target="_blank" rel="noopener"): slot
+a.link-preview.--external(
+	v-if="external"
+	target="_blank"
+	rel="noopener"
+): slot
 a.link-preview(v-else): slot
 </template>
 

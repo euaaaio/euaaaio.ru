@@ -1,7 +1,8 @@
-import { getCurrentScope, onScopeDispose, ref } from 'vue'
 import type { Ref } from 'vue'
 
-export type SpotifyNow = {
+import { getCurrentScope, onScopeDispose, ref } from 'vue'
+
+export type UseSpotifyReturn = {
 	isPlaying: false
 } | {
 	isPlaying: true
@@ -10,8 +11,8 @@ export type SpotifyNow = {
 	url?: string
 }
 
-export function useSpotifyNow (): Ref<SpotifyNow> {
-	let now = ref<SpotifyNow>({
+export function useSpotify (): Ref<UseSpotifyReturn> {
+	let now = ref<UseSpotifyReturn>({
 		isPlaying: false
 	})
 

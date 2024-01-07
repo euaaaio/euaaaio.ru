@@ -6,8 +6,8 @@ dl.e-last-updated
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, watchEffect } from 'vue'
 import { useData } from 'vitepress'
+import { onMounted, ref, watchEffect } from 'vue'
 
 const { page, site, theme } = useData()
 const date = new Date(page.value.lastUpdated || 0)

@@ -13,9 +13,9 @@ dl.spotify(v-if="spotify.isPlaying")
 </template>
 
 <script setup lang="ts">
-import { useSpotifyNow } from '../composables/useSpotifyNow.js'
+import { useSpotify } from '../composables/index.js'
 
-let spotify = useSpotifyNow()
+const spotify = useSpotify()
 </script>
 
 <style lang="stylus" scoped>

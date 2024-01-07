@@ -2,6 +2,7 @@
 	"extends": "@postanu/eslint-config/vue",
 	"ignorePatterns": [
 		"!content/.vitepress",
+		"content/.vitepress/cache",
 		"api"
 	]
 }

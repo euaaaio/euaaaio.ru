@@ -1,6 +1,8 @@
 import { defineConfigWithTheme } from 'vitepress'
 
-export default defineConfigWithTheme({
+import type { ThemeConfig } from './theme/index.js'
+
+export default defineConfigWithTheme<ThemeConfig>({
 	outDir: '../dist',
 	head: [
 		['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -10,32 +12,29 @@ export default defineConfigWithTheme({
 		['meta', { name: 'theme-color', content: '#e5e5e5', media: '(prefers-color-scheme: light)' }]
 	],
 	locales: {
-		'/': {
-			lang: 'en-US',
+		root: {
+			label: 'English',
+			lang: 'en',
 			title: 'Eduard Aksamitov',
-			description: 'Designer, developer, suprematist. I help launch, improve and update products and services. Quickly understand issues and solve problems.'
-		},
-		'/ru/': {
-			lang: 'ru-RU',
-			title: 'Эдуард Аксамитов',
-			description: 'Дизайнер, разработчик, супрематист. Помогаю запускать, улучшать и обновлять продукты и сервисы. Быстро разбираться в вопросах и решать проблемы.'
-		}
-	},
-	// https://github.com/vuejs/vitepress/issues/631
-	themeConfig: {
-		locales: {
-			'/': {
+			description: 'Designer, developer, suprematist. I help launch, improve and update products and services. Quickly understand issues and solve problems.',
+			themeConfig: {
 				lastUpdated: 'Last updated'
-			},
-			'/ru/': {
+			}
+		},
+		ru: {
+			label: 'Русский',
+			lang: 'ru',
+			title: 'Эдуард Аксамитов',
+			description: 'Дизайнер, разработчик, супрематист. Помогаю запускать, улучшать и обновлять продукты и сервисы. Быстро разбираться в вопросах и решать проблемы.',
+			themeConfig: {
 				lastUpdated: 'Обновлено последний раз'
 			}
 		}
 	},
-	markdown: {
-		anchor: {
-			permalink: false
-		}
-	},
+	// markdown: {
+	// 	anchor: {
+	// 		permalink: false
+	// 	}
+	// },
 	lastUpdated: true
 })

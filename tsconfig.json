@@ -25,5 +25,10 @@
     "api/**/*",
     "content/**/*",
     "content/.vitepress/**/*"
-  ]
+  ],
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue/language-plugin-pug"
+    ]
+  }
 }
