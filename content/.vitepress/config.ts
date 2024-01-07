@@ -1,3 +1,4 @@
+import VueDevTools from 'vite-plugin-vue-devtools'
 import { defineConfigWithTheme } from 'vitepress'
 
 import type { ThemeConfig } from './theme/index.js'
@@ -36,5 +37,10 @@ export default defineConfigWithTheme<ThemeConfig>({
 	// 		permalink: false
 	// 	}
 	// },
-	lastUpdated: true
+	lastUpdated: true,
+	vite: {
+		plugins: [
+			VueDevTools()
+		]
+	}
 })
