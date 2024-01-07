@@ -25,6 +25,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 		ru: {
 			label: 'Русский',
 			lang: 'ru',
+			link: '/ru',
 			title: 'Эдуард Аксамитов',
 			description: 'Дизайнер, разработчик, супрематист. Помогаю запускать, улучшать и обновлять продукты и сервисы. Быстро разбираться в вопросах и решать проблемы.',
 			themeConfig: {

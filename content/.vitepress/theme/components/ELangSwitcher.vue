@@ -10,9 +10,9 @@ import { useData } from 'vitepress'
 import { computed } from 'vue'
 
 const { lang } = useData()
-const href = computed(() => lang.value === 'en-US' ? '/ru/' : '/')
+const href = computed(() => lang.value === 'en' ? '/ru/' : '/')
 const t = computed(() => {
-	return lang.value === 'en-US'
+	return lang.value === 'en'
 		? {
 			lang: 'English',
 			lang_alt: 'Russian'
