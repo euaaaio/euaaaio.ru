@@ -1,0 +1,42 @@
+---
+interface Props {
+	datetime: string
+}
+
+const { datetime } = Astro.props
+
+const text = Astro.currentLocale === 'en'
+	? 'Last updated'
+	: 'Обновлено последний раз'
+
+const date = new Date(datetime)
+const dateISO = date.toISOString()
+---
+
+<dl class="last-updated">
+	<dt>
+		<time
+			class="last-updated__time"
+			datetime={ dateISO }
+		>{ dateISO }</time>
+	</dt>
+	<dd>{ text }</dd>
+</dl>
+
+<script is:inline>
+const timeEl = document.querySelector('.last-updated__time')
+const value = timeEl.getAttribute('datetime')
+const locale = document.documentElement.lang
+const formatter = new Intl.DateTimeFormat(locale, {
+	month: 'long',
+	day: 'numeric',
+	hour: 'numeric',
+	minute: 'numeric'
+})
+timeEl.textContent = formatter.format(new Date(value))
+</script>
+
+<style lang="sass">
+.last-updated
+	margin-top: 180px
+</style>

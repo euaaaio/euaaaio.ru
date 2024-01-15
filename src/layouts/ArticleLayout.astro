@@ -1,4 +1,6 @@
 ---
+import LastUpdated from '@/components/LastUpdated.astro'
+
 import PageLayout from './PageLayout.astro'
 
 const { frontmatter } = Astro.props
@@ -11,10 +13,9 @@ const { frontmatter } = Astro.props
 >
 	<article class="article grid">
 		<div class="article-content">
-			<slot></slot>
-			<!-- <e-last-updated v-if="frontmatter.lastUpdated"></e-last-updated> -->
+			<slot />
+			<LastUpdated datetime={ frontmatter.lastUpdated } />
 		</div>
-		<!-- <e-article-date class="article__date" v-if="frontmatter.date"></e-article-date> -->
 	</article>
 </PageLayout>
 
@@ -42,9 +43,6 @@ const { frontmatter } = Astro.props
 	:global(p),
 	:global(li)
 		padding-bottom: 20px
-
-		&:first-letter
-			padding-left: 30px
 
 	:global(a[target="_blank"])
 		text-decoration: underline
