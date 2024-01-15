@@ -1,6 +1,5 @@
 import sitemap from '@astrojs/sitemap'
 import { defineConfig } from 'astro/config'
-import compress from 'astro-compress'
 import rehypeExternalLinks from 'rehype-external-links'
 
 import { remarkLastUpdated } from './plugins/index.js'
@@ -19,7 +18,6 @@ export default defineConfig({
 		}
 	},
 	integrations: [
-		compress(),
 		sitemap()
 	],
 	markdown: {
