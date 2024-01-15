@@ -74,6 +74,7 @@ const {
 															/>
 															<img
 																alt={ project.title }
+																class="project__icon"
 																src={ project.icon.dark }
 															/>
 														</picture>
@@ -205,6 +206,10 @@ const {
 	display: flex
 	flex-direction: column
 	gap: 60px
+
+.project__icon
+	width: 20px
+	aspect-ratio: 1 / 1
 
 .connect__contacts
 	grid-row: 6
