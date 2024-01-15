@@ -3,22 +3,18 @@ layout: "@/layouts/ArticleLayout.astro"
 
 name: Эдуард Аксамитов
 
-title: What I’m working on now
+title: Над чем работаю сейчас
 description:
-  Telling what I'm working on now and will be working on later.
-  Publishing secret things. Keeping the list up to date.
-
-head:
-  - - link
-    - rel: alternate
-      hreflang: ru
-      href: https://euaaaio.ru/ru/now/
+  Рассказываю над чем работаю сейчас и буду работать позже.
+  Публикую секретное. Постоянно обновляю список.
 ---
 
-# What I’m working on now
+# Над чем работаю сейчас
 
-- Consulting several small businesses: help build the process of working online.
-- Preparing a secret project for [Suprematist](https://suprematist.cc).
-- Breaking my comfort zone, looking for and trying new things.
-- Experimenting with visual techniques in the design of collaborative applications.
-- I don’t give up working on my website: I layout ready-made layouts, draw new ones.
+- Выхожу из долгого саббатикала.
+- Ищу работу фронтенд инженером.
+- Консультирую несколько малых бизнесов:
+  помогаю строить процессы, нанимать разработчиков, обновлять сайты.
+- Изучаю [Астро](https://astro.build) — переписал этот сайт на нем.
+- Готовлю обновления для опенсорс проектов.
+- Рисую макеты для сайта [Супрематиста](https://suprematist.cc).
