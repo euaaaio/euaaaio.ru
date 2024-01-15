@@ -79,6 +79,24 @@ window.addEventListener('DOMContentLoaded', () => {
 	@media (width <= 480px)
 		filter: blur(3px)
 
+	@media (prefers-color-scheme: dark)
+		filter: blur(14px)
+
+		@media (width <= 1440px)
+			filter: blur(12px)
+
+		@media (width <= 1024px)
+			filter: blur(10px)
+
+		@media (width <= 840px)
+			filter: blur(7px)
+
+		@media (width <= 736px)
+			filter: blur(6px)
+
+		@media (width <= 480px)
+			filter: blur(5px)
+
 .background__container
 	position: relative
 	width: 90vw
