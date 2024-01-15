@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 20" width="18" height="20">
-	<path fill="black" d="M10.3483 20L0 12.3515L6.06207 9.85545L14.932 16.4113L10.3483 20Z" />
-	<path fill="black" clip-rule="evenodd" d="M7.6517 0L18 7.64847L11.9379 10.1445L3.06796 3.58871L7.6517 0Z" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20"><path d="M10.348 20 0 12.352l6.062-2.497 8.87 6.556z"/><path d="M7.652 0 18 7.648l-6.062 2.497-8.87-6.556z" clip-rule="evenodd"/></svg>
