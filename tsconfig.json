@@ -2,33 +2,23 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "jsx": "preserve",
-    "strict": true,
+    "moduleResolution": "bundler",
     "noEmit": true,
+    "strict": true,
     "allowJs": true,
-    "sourceMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "isolatedModules": true,
     "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@theme": ["./content/.vitepress/theme"]
+      "@/*": ["src/*"],
     },
     "lib": [
       "esnext",
-      "dom"
-    ]
-  },
-  "include": [
-    "env.d.ts",
-    "api/**/*",
-    "content/**/*",
-    "content/.vitepress/**/*"
-  ],
-  "vueCompilerOptions": {
-    "plugins": [
-      "@vue/language-plugin-pug"
+      "dom",
     ]
   }
 }

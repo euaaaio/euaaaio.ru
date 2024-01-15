@@ -1,0 +1,56 @@
+---
+interface Props {
+	href: string
+}
+
+const { href } = Astro.props
+---
+
+<a
+	class="project"
+	href={href}
+	rel="noopener"
+	target="_blank"
+>
+	<div class="project__content">
+		<slot name="icon" />
+		<h3 class="project__title">
+			<slot name="title" />
+		</h3>
+		<p class="project__description">
+			<slot name="description" />
+		</p>
+	</div>
+</a>
+
+<style lang="sass">
+.project
+	position: relative
+	display: block
+
+.project__content
+	position: relative
+	z-index: 1
+
+.project:after
+	position: absolute
+	inset: -20px
+	content: ""
+	background: var(--p-color-background-hover)
+	backdrop-filter: blur(10px)
+	border-radius: 15px
+	opacity: 0
+	transition: opacity .1s ease-in-out
+
+.project:hover:after
+	opacity: 1
+
+.project:hover .project__title
+	color: var(--p-color-white)
+
+.project__title
+	padding-top: 10px
+
+.project__description
+	color: var(--p-color-muted)
+</style>

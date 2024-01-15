@@ -1,0 +1,36 @@
+---
+import '@/styles/index.sass'
+
+import Background from '@/components/Background.astro'
+
+interface Props {
+	title: string
+	description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+{ /* eslint-disable perfectionist/sort-astro-attributes */ }
+<html lang="en">
+	<head>
+		<meta charset="utf8" />
+		<meta name="viewport" content="width=device-width" />
+
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="manifest" href="/manifest.webmanifest" />
+		<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+		<meta name="theme-color" content="#e5e5e5" media="(prefers-color-scheme: light)" />
+
+		<title>{ title }</title>
+
+		<meta name="description" content={ description } />
+		<meta name="generator" content={ Astro.generator } />
+	</head>
+	<body>
+		<slot />
+		<Background />
+	</body>
+</html>

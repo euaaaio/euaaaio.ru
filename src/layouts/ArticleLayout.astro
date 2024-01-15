@@ -1,0 +1,65 @@
+---
+import PageLayout from './PageLayout.astro'
+
+const { frontmatter } = Astro.props
+---
+
+<PageLayout
+	name={ frontmatter.name }
+	title={ frontmatter.title }
+	description={ frontmatter.description }
+>
+	<article class="article grid">
+		<div class="article-content">
+			<slot></slot>
+			<!-- <e-last-updated v-if="frontmatter.lastUpdated"></e-last-updated> -->
+		</div>
+		<!-- <e-article-date class="article__date" v-if="frontmatter.date"></e-article-date> -->
+	</article>
+</PageLayout>
+
+<style lang="sass">
+.article
+	position: relative
+
+	@media (width <= 736px)
+		position: inherit
+
+	:global(h1)
+		position: sticky
+		top: 10px
+		z-index: -1
+		height: 120px
+		font-weight: 700
+
+		@media (width <= 736px)
+			top: -210px
+			padding-top: 220px
+
+		& + *
+			margin-top: 180px
+
+	:global(p),
+	:global(li)
+		padding-bottom: 20px
+
+		&:first-letter
+			padding-left: 30px
+
+	:global(a[target="_blank"])
+		text-decoration: underline
+		text-decoration-color: var(--p-color-border)
+
+.article-content
+	grid-column: j / span 2
+
+.article__date
+	position: absolute
+	grid-column: h
+	color: var(--p-color-muted)
+
+	@media (width <= 736px)
+		position: inherit
+		grid-column: j / span 2
+		margin-top: 180px
+</style>

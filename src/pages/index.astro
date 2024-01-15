@@ -1,0 +1,182 @@
+---
+import iconLoguxDark from '@/assets/icons/logux-dark.svg'
+import iconLoguxLight from '@/assets/icons/logux-light.svg'
+import iconNanostoresDark from '@/assets/icons/nanostores-dark.svg'
+import iconNanostoresLight from '@/assets/icons/nanostores-light.svg'
+import iconSuprematistDark from '@/assets/icons/suprematist-dark.svg'
+import iconSuprematistLight from '@/assets/icons/suprematist-light.svg'
+import LinkPreview from '@/components/LinkPreview.astro'
+import IndexLayout from '@/layouts/IndexLayout.astro'
+
+type IndexLayoutProps = Parameters<typeof IndexLayout>[0]
+
+const projects: IndexLayoutProps['projects'] = [
+	{
+		title: 'Creator, curator and researcher',
+		list: [
+			{
+				href: 'https://suprematist.cc',
+				icon: {
+					dark: iconSuprematistDark.src,
+					light: iconSuprematistLight.src
+				},
+				title: 'Suprematist',
+				description: 'Digital magazine and commutiny about Suprematist as art movement'
+			}
+		]
+	},
+	{
+		title: 'Core team member and open-source developer',
+		list: [
+			{
+				href: 'https://github.com/nanostores',
+				icon: {
+					dark: iconNanostoresDark.src,
+					light: iconNanostoresLight.src
+				},
+				title: 'Nano Stores',
+				description: 'Tiny frontend state manager with many atomic tree-shakable stores'
+			},
+			{
+				href: 'https://logux.org',
+				icon: {
+					dark: iconLoguxDark.src,
+					light: iconLoguxLight.src
+				},
+				title: 'Logux',
+				description: 'Protocol and libraries for building real-time applications'
+			}
+		]
+	}
+]
+
+const connect: IndexLayoutProps['connect'] = [
+	[
+		[
+			'Spotify',
+			'https://open.spotify.com/user/31wybngwveld3gfnz3yf42szjtn4?si=2c5081eb8d1844ed'
+		]
+	],
+	[
+		[
+			'Telegram',
+			'https://t.me/euaaaio'
+		],
+		[
+			'Discord',
+			'https://discordapp.com/users/euaaaio#2400'
+		]
+	],
+	[
+		[
+			'Instagram',
+			'https://instagram.com/euaaaio'
+		],
+		[
+			'Facebook',
+			'https://facebook.com/euaaaio'
+		],
+		[
+			'Twitter',
+			'https://twitter.com/euaaaio'
+		],
+		[
+			'VK',
+			'https://vk.com/euaaaio'
+		]
+	],
+	[
+		[
+			'Pinterest',
+			'https://pinterest.com/suprematist'
+		],
+		[
+			'Behance',
+			'https://behance.com/euaaaio'
+		],
+		[
+			'Dribbble',
+			'https://dribbble.com/euaaaio'
+		]
+	],
+	[
+		[
+			'LinkedIn',
+			'https://www.linkedin.com/in/euaaaio/'
+		],
+		[
+			'Github',
+			'https://github.com/euaaaio'
+		]
+	]
+]
+---
+
+<IndexLayout
+	name="Eduard Aksamitov"
+	title="Eduard Aksamitov"
+	description="Designer, developer, suprematist, consultant. i help launch, improve and update products and services. quickly understand issues and solve problems."
+	connect={ connect }
+	projects={ projects }
+>
+	<Fragment slot="title">
+		Designer, developer, suprematist, consultant. i help launch, improve and update products and services. quickly understand issues and solve problems.
+	</Fragment>
+	<Fragment slot="links">
+		<LinkPreview href="/consultancy">
+			Available <br>for consultancy
+		</LinkPreview>
+		<LinkPreview href="/now">
+			See what <br>I’m working on now
+		</LinkPreview>
+	</Fragment>
+	<Fragment slot="job">
+		<LinkPreview
+			external={ true }
+			href="https://www.linkedin.com/in/euaaaio/"
+		>
+			Open for work <br>as a frontend engineer
+		</LinkPreview>
+	</Fragment>
+	<Fragment slot="bio">
+		<p>Over 10 years working as a designer, frontend developer and Art Director.</p>
+		<br>
+		<p>Left marketing. Founded my own design & development agency and closed it to be an independent consultant.</p>
+		<br>
+		<p>I focus on consulting and project management, where design and development balance is important.</p>
+		<br>
+		<p>You can call me a designer <br>if you want.</p>
+	</Fragment>
+	<Fragment slot="contacts">
+		<dl>
+			<dt>
+				<a
+					href="mailto:hello@euaaaio.ru"
+					rel="noopener"
+					target="_blank"
+				>
+					hello@euaaaio.ru
+				</a>
+			</dt>
+			<dd>for what really matters</dd>
+			<dt>00 911 785 85 70</dt>
+			<dd>for silence</dd>
+		</dl>
+	</Fragment>
+	<Fragment slot="username">
+		<dl>
+			<dt>euaaaio</dt>
+			<dd>as alias to find me</dd>
+		</dl>
+	</Fragment>
+	<Fragment slot="spotify">playing on Spotify</Fragment>
+	<Fragment slot="gpg">
+		<dl>
+			<dt>
+				<span class="mark">GPG</span>
+				<span>8A96 72CC F199 75E6</span>
+			</dt>
+			<dd>for verifying</dd>
+		</dl>
+	</Fragment>
+</IndexLayout>

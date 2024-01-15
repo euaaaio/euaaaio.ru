@@ -1,0 +1,272 @@
+---
+import LinkUnderlined from '@/components/LinkUnderlined.astro'
+import Project from '@/components/Project.astro'
+import Section from '@/components/Section.astro'
+import Spotify from '@/components/Spotify.astro'
+import PageLayout from '@/layouts/PageLayout.astro'
+
+interface Props {
+	name: string
+	title: string
+	description: string
+	projects: Array<{
+		title: string
+		list: Array<{
+			icon: {
+				dark: string
+				light: string
+			}
+			title: string
+			description: string
+			href: string
+		}>
+	}>
+	connect: Array<Array<[string, string]>>
+}
+
+const {
+	name,
+	title,
+	description,
+	projects,
+	connect
+} = Astro.props
+---
+
+<PageLayout
+	name={ name }
+	title={ title }
+	description={ description }
+>
+	<Section id="index">
+		<p class="index__title">
+			<slot name="title" />
+		</p>
+		<div class="index__links">
+			<slot name="links" />
+		</div>
+		<div class="index__job">
+			<slot name="job" />
+		</div>
+	</Section>
+
+	<Section id="person">
+		<div class="person__bio">
+			<slot name="bio" />
+		</div>
+		<div class="person__projects">
+			<dl class="person__dl">
+				{
+					projects.map(group => (
+						<>
+							<dt class="person__dt">{ group.title }</dt>
+							<dd class="person__dd">
+								<ul class="person__dd-list">
+									{
+										group.list.map(project => (
+											<li>
+												<Project href={ project.href }>
+													<Fragment slot="icon">
+														<picture>
+															<source
+																media="(prefers-color-scheme: light)"
+																srcset={ project.icon.light }
+															/>
+															<img
+																alt={ project.title }
+																src={ project.icon.dark }
+															/>
+														</picture>
+													</Fragment>
+													<Fragment slot="title">{ project.title }</Fragment>
+													<Fragment slot="description">
+														{ project.description }
+													</Fragment>
+												</Project>
+											</li>
+										))
+									}
+								</ul>
+							</dd>
+						</>
+					))
+				}
+			</dl>
+		</div>
+	</Section>
+
+	<Section id="connect">
+		<div class="connect__contacts">
+			<slot name="contacts" />
+		</div>
+		<div class="connect__username">
+			<slot name="username" />
+		</div>
+		<div class="connect__links">
+			{
+				connect.map(list => (
+					<ul>
+						{
+							list.map(([text, href]) => (
+								<li>
+									<LinkUnderlined href={ href }>{ text }</LinkUnderlined>
+								</li>
+							))
+						}
+					</ul>
+				))
+			}
+		</div>
+		<div class="connect__spotify">
+			<Spotify>
+				<slot name="spotify" />
+			</Spotify>
+		</div>
+		<div class="connect__gpg">
+			<slot name="gpg" />
+		</div>
+	</Section>
+</PageLayout>
+
+<style lang="sass">
+.index__title
+	grid-column: j / span 3
+	padding-right: 10%
+	font-size: 24px
+
+	@media (width <= 736px)
+		grid-row: 4
+
+.index__links
+	display: flex
+	flex-direction: column
+	grid-row: 6
+	grid-column: j / span 2
+	gap: 60px
+
+	@media (width <= 736px)
+		grid-row: 8
+		grid-column: j / span 1
+
+	> *
+		position: sticky
+		top: 170px
+
+		@media (width <= 736px)
+			position: inherit
+
+.index__job
+	grid-row: 11
+	grid-column: j / span 2
+
+	@media (width <= 736px)
+		grid-row: 12
+
+.person__bio
+	grid-row: 6
+	grid-column: j / span 2
+
+.person__projects
+	grid-row: 10
+	grid-column: h / span 4
+
+	@media (width <= 736px)
+		grid-column: j / span 2
+
+.person__dl
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	gap: 120px 20px
+
+	@media (width <= 736px)
+		grid-template-columns: 1fr 1fr
+		gap: 0
+
+.person__dt
+	grid-column: 1
+	padding-top: 30px
+
+	@media (width <= 736px)
+		padding-top: 0
+		font-weight: 600
+
+		&:not(:first-child)
+			margin-top: 120px
+
+.person__dd
+	grid-column: 3 / 5
+
+	@media (width <= 736px)
+		grid-column: 1 / span 2
+		margin-top: 60px
+
+.person__dd-list
+	display: flex
+	flex-direction: column
+	gap: 60px
+
+.connect__contacts
+	grid-row: 6
+	grid-column: j / span 2
+
+.connect__username
+	grid-row: 10
+	grid-column: j / span 2
+	margin-top: 20px
+
+.connect__links
+	display: flex
+	grid-row: 12
+	grid-column: h / span 5
+	gap: 20px
+
+	:global(ul)
+		flex: 1
+		margin-top: -10px
+
+	:global(li a)
+		display: inline-block
+		padding: 10px 0
+
+	@media (width <= 840px)
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-row: 13
+		grid-column: j / span 2
+		gap: 60px 20px
+
+		ul:nth-child(1)
+			order: 5
+
+		ul:nth-child(2)
+			order: 3
+
+		ul:nth-child(5)
+			order: 4
+
+	@media (width <= 739px)
+		grid-column: j
+		gap: 60px 0
+
+.connect__spotify
+	grid-area: 15 / e / span 2 / span 2
+
+	@media (width <= 840px)
+		grid-area: 20 / j / span 2 / span 2
+
+.connect__gpg
+	position: relative
+	grid-row: 16
+	grid-column: j / span 2
+
+	:global(dt)
+		text-transform: uppercase
+
+	:global(.mark)
+		position: absolute
+		left: -20px
+		transform: translateX(-100%)
+
+	@media (width <= 736px)
+		grid-row: 17
+</style>

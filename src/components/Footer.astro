@@ -1,0 +1,40 @@
+---
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="grid footer">
+	<div class="copyright">
+		<p class="mark">©</p>
+		<p class="year">
+			<span class="start">1995 —&nbsp;</span>
+			<span class="today">{ currentYear }</span>
+			<span class="end"> — ready <br>to die</span>
+		</p>
+	</div>
+</footer>
+
+<style lang="sass">
+.footer
+	min-height: calc(100vh - 20px)
+
+.copyright
+	display: flex
+	flex-direction: column
+	grid-area: j
+	gap: 240px
+	justify-content: flex-end
+	padding: 240px 0 120px
+
+.year
+	position: relative
+
+.start
+	position: absolute
+	left: 0
+	transform: translateX(-100%)
+
+.end
+	display: block
+	margin-top: 20px
+	color: var(--p-color-muted)
+</style>

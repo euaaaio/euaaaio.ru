@@ -1,0 +1,171 @@
+<div class="background">
+	<div class="background__container">
+		<div class="background__circle"></div>
+		<div class="background__circle"></div>
+		<div class="background__circle"></div>
+		<div class="background__circle"></div>
+		<div class="background__circle"></div>
+		<div class="background__circle"></div>
+	</div>
+</div>
+
+<script is:inline>
+window.addEventListener('visibilitychange', () => {
+	if (document.visibilityState === 'hidden') {
+		let elements = document.querySelectorAll('.background__circle')
+		elements.forEach((el, index) => {
+			let matrix = window.getComputedStyle(el).transform
+
+			let [a, b] = matrix.replace('matrix(', '').replace(')', '').split(', ')
+			a = Number.parseFloat(a)
+			b = Number.parseFloat(b)
+			let angleRadians = Math.atan2(b, a)
+			let angleDegrees = angleRadians * (180 / Math.PI)
+			angleDegrees = Number.parseInt((angleDegrees + 360) % 360)
+
+			let key = `euaaaio:css:bg:${index}`
+			let value = `${angleDegrees}deg`
+			localStorage.setItem(key, value)
+		})
+	}
+})
+
+window.addEventListener('DOMContentLoaded', () => {
+	let backgroundEl = document.querySelector('.background')
+
+	for (let i = 0; i < 5; i++) {
+		let key = `euaaaio:css:bg:${i}`
+		let value = localStorage.getItem(key)
+		if (value) {
+			backgroundEl.style.setProperty(`--cirle-${i + 1}`, value)
+		}
+	}
+
+	backgroundEl.style.setProperty('--show', 1)
+})
+</script>
+
+<style lang="sass" is:global>
+.background
+	--show: 0
+	--cirle-1: 0deg
+	--cirle-2: 0deg
+	--cirle-3: 0deg
+	--cirle-4: 0deg
+	--cirle-5: 0deg
+	--cirle-6: 0deg
+
+	position: fixed
+	inset: 30vh 0 auto
+	z-index: -1
+	display: flex
+	justify-content: center
+	filter: blur(11px)
+	opacity: var(--show)
+	transition: opacity 1s ease-in-out
+
+.background__container
+	position: relative
+	width: 90vw
+	aspect-ratio: 1
+
+.background__circle
+	position: absolute
+	background-size: cover
+
+.background__circle:nth-child(1)
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-image: url('../assets/background/6.png')
+	// transform: rotate(var(--cirle-1))
+	animation: spin-1 100s linear infinite
+
+.background__circle:nth-child(2)
+	top: 5%
+	left: 5%
+	width: 90%
+	height: 90%
+	background-image: url('../assets/background/5.png')
+	// transform: rotate(var(--cirle-2))
+	animation: spin-2 90s linear infinite reverse
+
+.background__circle:nth-child(3)
+	top: 10%
+	left: 10%
+	width: 80%
+	height: 80%
+	background-image: url('../assets/background/4.png')
+	// transform: rotate(var(--cirle-3))
+	animation: spin-3 80s linear infinite
+
+.background__circle:nth-child(4)
+	top: 15%
+	left: 15%
+	width: 70%
+	height: 70%
+	background-image: url('../assets/background/3.png')
+	// transform: rotate(var(--cirle-4))
+	animation: spin-4 70s linear infinite reverse
+
+.background__circle:nth-child(5)
+	top: 20%
+	left: 20%
+	width: 60%
+	height: 60%
+	background-image: url('../assets/background/2.png')
+	// transform: rotate(var(--cirle-5))
+	animation: spin-5 60s linear infinite
+
+.background__circle:nth-child(6)
+	top: 25%
+	left: 25%
+	width: 50%
+	height: 50%
+	background-image: url('../assets/background/1.png')
+	// transform: rotate(var(--cirle-6))
+	animation: spin-6 50s linear infinite reverse
+
+@keyframes spin-1
+	0%
+		transform: rotate(var(--cirle-1))
+
+	100%
+		transform: rotate(calc(var(--cirle-1) + 360deg))
+
+@keyframes spin-2
+	0%
+		transform: rotate(var(--cirle-2))
+
+	100%
+		transform: rotate(calc(var(--cirle-2) + 360deg))
+
+@keyframes spin-3
+	0%
+		transform: rotate(var(--cirle-3))
+
+	100%
+		transform: rotate(calc(var(--cirle-3) + 360deg))
+
+@keyframes spin-4
+	0%
+		transform: rotate(var(--cirle-4))
+
+	100%
+		transform: rotate(calc(var(--cirle-4) + 360deg))
+
+@keyframes spin-5
+	0%
+		transform: rotate(var(--cirle-5))
+
+	100%
+		transform: rotate(calc(var(--cirle-5) + 360deg))
+
+@keyframes spin-6
+	0%
+		transform: rotate(var(--cirle-6))
+
+	100%
+		transform: rotate(calc(var(--cirle-6) + 360deg))
+</style>

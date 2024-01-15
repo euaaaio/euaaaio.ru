@@ -1,0 +1,182 @@
+---
+import iconLoguxDark from '@/assets/icons/logux-dark.svg'
+import iconLoguxLight from '@/assets/icons/logux-light.svg'
+import iconNanostoresDark from '@/assets/icons/nanostores-dark.svg'
+import iconNanostoresLight from '@/assets/icons/nanostores-light.svg'
+import iconSuprematistDark from '@/assets/icons/suprematist-dark.svg'
+import iconSuprematistLight from '@/assets/icons/suprematist-light.svg'
+import LinkPreview from '@/components/LinkPreview.astro'
+import IndexLayout from '@/layouts/IndexLayout.astro'
+
+type IndexLayoutProps = Parameters<typeof IndexLayout>[0]
+
+const projects: IndexLayoutProps['projects'] = [
+	{
+		title: 'Создатель, куратор и исследователь',
+		list: [
+			{
+				href: 'https://suprematist.cc',
+				icon: {
+					dark: iconSuprematistDark.src,
+					light: iconSuprematistLight.src
+				},
+				title: 'Супрематист',
+				description: 'Цифровой журнал и сообщество о супрематизме как художественном движении'
+			}
+		]
+	},
+	{
+		title: 'Член команды и опенсорс-разработчик',
+		list: [
+			{
+				href: 'https://github.com/nanostores',
+				icon: {
+					dark: iconNanostoresDark.src,
+					light: iconNanostoresLight.src
+				},
+				title: 'Наносторы',
+				description: 'Минималистичная библиотека для управления состоянием веб-приложений'
+			},
+			{
+				href: 'https://logux.org',
+				icon: {
+					dark: iconLoguxDark.src,
+					light: iconLoguxLight.src
+				},
+				title: 'Логакс',
+				description: 'Протокол и библиотеки для создания приложений в реальном времени'
+			}
+		]
+	}
+]
+
+const connect: IndexLayoutProps['connect'] = [
+	[
+		[
+			'Спотифай',
+			'https://open.spotify.com/user/31wybngwveld3gfnz3yf42szjtn4?si=2c5081eb8d1844ed'
+		]
+	],
+	[
+		[
+			'Телеграм',
+			'https://t.me/euaaaio'
+		],
+		[
+			'Дискорд',
+			'https://discordapp.com/users/euaaaio#2400'
+		]
+	],
+	[
+		[
+			'Инстаграм',
+			'https://instagram.com/euaaaio'
+		],
+		[
+			'Фейсбук',
+			'https://facebook.com/euaaaio'
+		],
+		[
+			'Твиттер',
+			'https://twitter.com/euaaaio'
+		],
+		[
+			'ВК',
+			'https://vk.com/euaaaio'
+		]
+	],
+	[
+		[
+			'Пинтерест',
+			'https://pinterest.com/suprematist'
+		],
+		[
+			'Беханс',
+			'https://behance.com/euaaaio'
+		],
+		[
+			'Дриббл',
+			'https://dribbble.com/euaaaio'
+		]
+	],
+	[
+		[
+			'Линкедин',
+			'https://www.linkedin.com/in/euaaaio/'
+		],
+		[
+			'Гитхаб',
+			'https://github.com/euaaaio'
+		]
+	]
+]
+---
+
+<IndexLayout
+	name="Эдуард Аксамитов"
+	title="Эдуард Аксамитов"
+	description="Дизайнер, разработчик, супрематист, консультант. Помогаю запускать, улучшать и обновлять продукты и сервисы. Быстро разбираться в вопросах и решать проблемы."
+	connect={ connect }
+	projects={ projects }
+>
+	<Fragment slot="title">
+		Дизайнер, разработчик, супрематист, консультант. Помогаю запускать, улучшать и обновлять продукты и сервисы. Быстро разбираться в вопросах и решать проблемы.
+	</Fragment>
+	<Fragment slot="links">
+		<LinkPreview href="/ru/consultancy">
+			Доступен <br>для консультации
+		</LinkPreview>
+		<LinkPreview href="/ru/now">
+			Посмотреть <br>над чем работаю сейчас
+		</LinkPreview>
+	</Fragment>
+	<Fragment slot="job">
+		<LinkPreview
+			external={ true }
+			href="https://www.linkedin.com/in/euaaaio/"
+		>
+			В поиске работы <br>как фронтенд инженер
+		</LinkPreview>
+	</Fragment>
+	<Fragment slot="bio">
+		<p>Более 10 лет работают как дизайнер, фронтенд-разработчик и Арт-директор.</p>
+		<br>
+		<p>Ушел из маркетинга. Основал агентство дизайна и разработки и закрыл его, чтобы стать независимым консультантом.</p>
+		<br>
+		<p>Специализируюсь на консалтинге и управлении проектами, где важен баланс между дизайном и разработкой.</p>
+		<br>
+		<p>Можете называть меня дизайнером, <br>если хотите.</p>
+	</Fragment>
+	<Fragment slot="contacts">
+		<dl>
+			<dt>
+				<a
+					href="mailto:hello@euaaaio.ru"
+					rel="noopener"
+					target="_blank"
+				>
+					hello@euaaaio.ru
+				</a>
+			</dt>
+			<dd>для действительно важного</dd>
+			<dt>00 911 785 85 70</dt>
+			<dd>для тишины</dd>
+		</dl>
+	</Fragment>
+	<Fragment slot="username">
+		<dl>
+			<dt>euaaaio</dt>
+			<dd>как псевдоним</dd>
+		</dl>
+	</Fragment>
+	<Fragment slot="spotify">играет на Спотифае</Fragment>
+	<Fragment slot="gpg">
+		<dl>
+			<dt>
+				<span class="mark">GPG</span>
+				<span>8A96 72CC F199 75E6</span>
+			</dt>
+			<dd>для верификации</dd>
+		</dl>
+	</Fragment>
+</IndexLayout>

@@ -1,0 +1,74 @@
+---
+import iconSpotifyDark from '@/assets/icons/spotify-dark.svg'
+import iconSpotifyLight from '@/assets/icons/spotify-light.svg'
+---
+
+<dl class="spotify">
+	<dt>
+		<picture>
+			<source
+				media="(prefers-color-scheme: light)"
+				srcset={ iconSpotifyLight.src }
+			/>
+		</picture>
+		<img alt="Spotify Logo" src={ iconSpotifyDark.src } />
+		<a
+			class="spotify__link"
+			rel="noopener"
+			target="_blank"
+		></a>
+	</dt>
+	<dd>
+		<slot />
+	</dd>
+</dl>
+
+<script is:inline>
+let spotifyEl = document.querySelector('.spotify')
+let spotifiLinkEl = document.querySelector('.spotify__link')
+
+async function updateSpotify () {
+	try {
+		let res = await fetch('/api/spotify')
+		if (res.status !== 200) {
+			spotifyEl.style.display = 'none'
+		}
+
+		let player = await res.json()
+		if (player.playing === false) {
+			spotifyEl.style.display = 'none'
+		} else {
+			spotifyEl.style.display = 'block'
+			spotifiLinkEl.href = player.url
+			spotifiLinkEl.innerHTML = `${player.artist} <br>${player.song}`
+		}
+	} catch (error) {
+		console.log(error)
+		spotifyEl.style.display = 'none'
+	}
+
+	setTimeout(() => updateSpotify(), 10_000)
+}
+
+// eslint-disable-next-line unicorn/prefer-top-level-await
+updateSpotify()
+</script>
+
+<style lang="sass">
+.spotify
+	display: none
+	text-transform: none
+
+	:global(dt a)
+		display: block
+		margin-top: 10px
+
+	:global(dd)
+		text-transform: none
+
+.spotify__icon
+	vertical-align: top
+
+.spotify__link
+	text-decoration: none
+</style>

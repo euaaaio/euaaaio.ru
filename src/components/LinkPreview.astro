@@ -1,0 +1,43 @@
+---
+interface Props {
+	external?: boolean
+	href: string
+}
+
+const {
+	external = false,
+	href
+} = Astro.props
+---
+
+{
+	external === true
+		? <a
+			class="link-preview --external"
+			href={ href }
+			rel="noopener"
+			target="_blank"
+		>
+			<slot />
+		</a>
+		: <a
+			class="link-preview"
+			href={ href }
+		>
+			<slot />
+		</a>
+}
+
+<style lang="sass">
+.link-preview
+  display: inline-flex
+  flex-direction: column
+  gap: 20px
+
+  &:after
+    content: "→"
+
+.link-preview.--external
+  &:after
+    content: "↗"
+</style>
