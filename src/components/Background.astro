@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		let key = `euaaaio:css:bg:${i}`
 		let value = localStorage.getItem(key)
 		if (value) {
-			backgroundEl.style.setProperty(`--cirle-${i + 1}`, value)
+			backgroundEl.style.setProperty(`--circle-${i + 1}`, value)
 		}
 	}
 
@@ -48,12 +48,12 @@ window.addEventListener('DOMContentLoaded', () => {
 <style lang="sass" is:global>
 .background
 	--show: 0
-	--cirle-1: 0deg
-	--cirle-2: 0deg
-	--cirle-3: 0deg
-	--cirle-4: 0deg
-	--cirle-5: 0deg
-	--cirle-6: 0deg
+	--circle-1: 0deg
+	--circle-2: 0deg
+	--circle-3: 0deg
+	--circle-4: 0deg
+	--circle-5: 0deg
+	--circle-6: 0deg
 
 	position: fixed
 	inset: 30vh 0 auto
@@ -79,7 +79,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	width: 100%
 	height: 100%
 	background-image: url('../assets/background/6.png')
-	// transform: rotate(var(--cirle-1))
 	animation: spin-1 100s linear infinite
 
 .background__circle:nth-child(2)
@@ -88,7 +87,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	width: 90%
 	height: 90%
 	background-image: url('../assets/background/5.png')
-	// transform: rotate(var(--cirle-2))
 	animation: spin-2 90s linear infinite reverse
 
 .background__circle:nth-child(3)
@@ -97,7 +95,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	width: 80%
 	height: 80%
 	background-image: url('../assets/background/4.png')
-	// transform: rotate(var(--cirle-3))
 	animation: spin-3 80s linear infinite
 
 .background__circle:nth-child(4)
@@ -106,7 +103,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	width: 70%
 	height: 70%
 	background-image: url('../assets/background/3.png')
-	// transform: rotate(var(--cirle-4))
 	animation: spin-4 70s linear infinite reverse
 
 .background__circle:nth-child(5)
@@ -115,7 +111,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	width: 60%
 	height: 60%
 	background-image: url('../assets/background/2.png')
-	// transform: rotate(var(--cirle-5))
 	animation: spin-5 60s linear infinite
 
 .background__circle:nth-child(6)
@@ -124,48 +119,47 @@ window.addEventListener('DOMContentLoaded', () => {
 	width: 50%
 	height: 50%
 	background-image: url('../assets/background/1.png')
-	// transform: rotate(var(--cirle-6))
 	animation: spin-6 50s linear infinite reverse
 
 @keyframes spin-1
 	0%
-		transform: rotate(var(--cirle-1))
+		transform: rotate(var(--circle-1))
 
 	100%
-		transform: rotate(calc(var(--cirle-1) + 360deg))
+		transform: rotate(calc(var(--circle-1) + 360deg))
 
 @keyframes spin-2
 	0%
-		transform: rotate(var(--cirle-2))
+		transform: rotate(var(--circle-2))
 
 	100%
-		transform: rotate(calc(var(--cirle-2) + 360deg))
+		transform: rotate(calc(var(--circle-2) + 360deg))
 
 @keyframes spin-3
 	0%
-		transform: rotate(var(--cirle-3))
+		transform: rotate(var(--circle-3))
 
 	100%
-		transform: rotate(calc(var(--cirle-3) + 360deg))
+		transform: rotate(calc(var(--circle-3) + 360deg))
 
 @keyframes spin-4
 	0%
-		transform: rotate(var(--cirle-4))
+		transform: rotate(var(--circle-4))
 
 	100%
-		transform: rotate(calc(var(--cirle-4) + 360deg))
+		transform: rotate(calc(var(--circle-4) + 360deg))
 
 @keyframes spin-5
 	0%
-		transform: rotate(var(--cirle-5))
+		transform: rotate(var(--circle-5))
 
 	100%
-		transform: rotate(calc(var(--cirle-5) + 360deg))
+		transform: rotate(calc(var(--circle-5) + 360deg))
 
 @keyframes spin-6
 	0%
-		transform: rotate(var(--cirle-6))
+		transform: rotate(var(--circle-6))
 
 	100%
-		transform: rotate(calc(var(--cirle-6) + 360deg))
+		transform: rotate(calc(var(--circle-6) + 360deg))
 </style>
