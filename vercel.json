@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/(.*\\.(png,svg,woff2))",
       "headers": [
         {
           "key": "Cache-Control",
