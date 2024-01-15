@@ -64,6 +64,21 @@ window.addEventListener('DOMContentLoaded', () => {
 	opacity: var(--show)
 	transition: opacity 1s ease-in-out
 
+	@media (width <= 1440px)
+		filter: blur(9px)
+
+	@media (width <= 1024px)
+		filter: blur(7px)
+
+	@media (width <= 840px)
+		filter: blur(5px)
+
+	@media (width <= 736px)
+		filter: blur(4px)
+
+	@media (width <= 480px)
+		filter: blur(3px)
+
 .background__container
 	position: relative
 	width: 90vw
