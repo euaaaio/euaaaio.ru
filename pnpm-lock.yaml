@@ -74,6 +74,9 @@ devDependencies:
   postcss:
     specifier: ^8.4.33
     version: 8.4.33
+  postcss-focus:
+    specifier: ^7.0.0
+    version: 7.0.0(postcss@8.4.33)
   rehype-external-links:
     specifier: ^3.0.0
     version: 3.0.0
@@ -4546,6 +4549,15 @@ packages:
   /pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
+    dev: true
+
+  /postcss-focus@7.0.0(postcss@8.4.33):
+    resolution: {integrity: sha512-yX7TJK3cNiBLzjT0Psmk0mWjD8+v/FbcBOJ5mg5JX2+8uIjI7zewPgkGOocYzE81+aBHWXrw+BSstsp3Bl3UaA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      postcss: 8.4.33
     dev: true
 
   /postcss-html@1.6.0:
