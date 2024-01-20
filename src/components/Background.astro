@@ -10,7 +10,7 @@
 </div>
 
 <script is:inline>
-window.addEventListener('visibilitychange', () => {
+document.addEventListener('visibilitychange', () => {
 	if (document.visibilityState === 'hidden') {
 		let elements = document.querySelectorAll('.background__circle')
 		elements.forEach((el, index) => {
