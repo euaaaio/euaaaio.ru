@@ -25,7 +25,7 @@ window.addEventListener('visibilitychange', () => {
 
 			let key = `euaaaio:css:bg:${index}`
 			let value = `${angleDegrees}deg`
-			localStorage.setItem(key, value)
+			sessionStorage.setItem(key, value)
 		})
 	}
 })
@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	for (let i = 0; i < 5; i++) {
 		let key = `euaaaio:css:bg:${i}`
-		let value = localStorage.getItem(key)
+		let value = sessionStorage.getItem(key)
 		if (value) {
 			backgroundEl.style.setProperty(`--circle-${i + 1}`, value)
 		}
