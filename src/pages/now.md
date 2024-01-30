@@ -15,6 +15,5 @@ description:
 - Looking for a job as a frontend engineer.
 - Consulting several small businesses:
   helping to build processes, hire developers, update websites.
-- Learning [Astro](https://astro.build) — rewrote this site with it.
 - Preparing updates for open-source projects.
 - Designing layouts for the [Suprematist](https://suprematist.cc) website.
