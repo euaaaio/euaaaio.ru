@@ -5,6 +5,8 @@ import iconNanostoresDark from '@/assets/icons/nanostores-dark.svg'
 import iconNanostoresLight from '@/assets/icons/nanostores-light.svg'
 import iconSuprematistDark from '@/assets/icons/suprematist-dark.svg'
 import iconSuprematistLight from '@/assets/icons/suprematist-light.svg'
+import iconTryBrewDark from '@/assets/icons/trybrew-dark.svg'
+import iconTryBrewLight from '@/assets/icons/trybrew-light.svg'
 import LinkPreview from '@/components/LinkPreview.astro'
 import IndexLayout from '@/layouts/IndexLayout.astro'
 
@@ -45,6 +47,15 @@ const projects: IndexLayoutProps['projects'] = [
 				},
 				title: 'Логакс',
 				description: 'Протокол и библиотеки для создания приложений в реальном времени'
+			},
+			{
+				href: 'https://trybrew.app',
+				icon: {
+					dark: iconTryBrewDark.src,
+					light: iconTryBrewLight.src
+				},
+				title: 'Трай-брю',
+				description: 'Рецепты приготовления и сообщество любителей кофе'
 			}
 		]
 	}
