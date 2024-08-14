@@ -17,9 +17,7 @@ export default defineConfig({
 			strategy: 'pathname'
 		}
 	},
-	integrations: [
-		sitemap()
-	],
+	integrations: [sitemap()],
 	markdown: {
 		rehypePlugins: [
 			[

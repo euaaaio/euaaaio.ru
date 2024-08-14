@@ -8,15 +8,12 @@ export const config = {
 	runtime: 'edge'
 }
 
-export default async function handler (): Promise<unknown> {
+export default async function handler(): Promise<unknown> {
 	try {
 		let accessToken = await getAccessToken()
 		let player = await getNowPaying(accessToken)
 
-		if (
-			!player.is_playing ||
-			player.currently_playing_type !== 'track'
-		) {
+		if (!player.is_playing || player.currently_playing_type !== 'track') {
 			return Response.json({ playing: false })
 		}
 
@@ -33,7 +30,7 @@ export default async function handler (): Promise<unknown> {
 	}
 }
 
-async function getAccessToken (): Promise<string> {
+async function getAccessToken(): Promise<string> {
 	let basic = btoa(`${clientId}:${clientSecret}`)
 
 	let res = await fetch('https://accounts.spotify.com/api/token', {
@@ -56,12 +53,15 @@ async function getAccessToken (): Promise<string> {
 	return data.access_token
 }
 
-async function getNowPaying (accessToken: string): Promise<PlaybackState> {
-	let res = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
-		headers: {
-			Authorization: `Bearer ${accessToken}`
+async function getNowPaying(accessToken: string): Promise<PlaybackState> {
+	let res = await fetch(
+		'https://api.spotify.com/v1/me/player/currently-playing',
+		{
+			headers: {
+				Authorization: `Bearer ${accessToken}`
+			}
 		}
-	})
+	)
 
 	if (res.status !== 200) {
 		throw new Error('Request now playing failed')
