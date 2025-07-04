@@ -7,6 +7,9 @@
   "repository": "euaaaio/euaaaio.ru",
   "type": "module",
   "packageManager": "pnpm@10.12.4",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
