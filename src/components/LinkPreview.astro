@@ -6,26 +6,30 @@ interface Props {
 
 const {
 	external = false,
-	href
+	href,
 } = Astro.props
 ---
 
 {
 	external === true
-		? <a
-			class="link-preview --external"
-			href={ href }
-			rel="noopener"
-			target="_blank"
-		>
-			<slot />
-		</a>
-		: <a
-			class="link-preview"
-			href={ href }
-		>
-			<slot />
-		</a>
+		? (
+				<a
+					class="link-preview --external"
+					href={href}
+					rel="noopener"
+					target="_blank"
+				>
+					<slot />
+				</a>
+			)
+		: (
+				<a
+					class="link-preview"
+					href={href}
+				>
+					<slot />
+				</a>
+			)
 }
 
 <style lang="sass">

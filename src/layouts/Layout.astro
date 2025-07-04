@@ -1,6 +1,5 @@
 ---
 import '@/styles/index.sass'
-
 import Background from '@/components/Background.astro'
 
 interface Props {
@@ -12,7 +11,7 @@ const { title, description } = Astro.props
 ---
 
 <!doctype html>
-<html lang={ Astro.currentLocale }>
+<html lang={Astro.currentLocale}>
 	<head>
 		<meta charset="utf8" />
 		<meta name="viewport" content="width=device-width" />
@@ -26,8 +25,8 @@ const { title, description } = Astro.props
 
 		<title>{ title }</title>
 
-		<meta name="description" content={ description } />
-		<meta name="generator" content={ Astro.generator } />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
 		<slot />

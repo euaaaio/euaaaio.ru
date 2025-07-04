@@ -1,3 +1,10 @@
-import eslintConfigPostanu from '@postanu/eslint-config/astro'
+import { defineConfig } from '@euaaaio/eslint-config'
 
-export default [...eslintConfigPostanu]
+export default defineConfig({
+	typescript: true,
+	astro: true,
+	stylistic: {
+		indent: 'tab',
+	},
+	perfectionist: true,
+})

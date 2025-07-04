@@ -29,14 +29,14 @@ const {
 	title,
 	description,
 	projects,
-	connect
+	connect,
 } = Astro.props
 ---
 
 <PageLayout
-	name={ name }
-	title={ title }
-	description={ description }
+	name={name}
+	title={title}
+	description={description}
 >
 	<Section id="index">
 		<p class="index__title">
@@ -65,16 +65,16 @@ const {
 									{
 										group.list.map(project => (
 											<li>
-												<Project href={ project.href }>
+												<Project href={project.href}>
 													<Fragment slot="icon">
 														<picture>
 															<source
 																media="(prefers-color-scheme: light)"
-																srcset={ project.icon.light }
+																srcset={project.icon.light}
 															/>
 															<img
-																alt={ project.title }
-																src={ project.icon.dark }
+																alt={project.title}
+																src={project.icon.dark}
 															/>
 														</picture>
 													</Fragment>
@@ -109,7 +109,7 @@ const {
 						{
 							list.map(([text, href]) => (
 								<li>
-									<LinkUnderlined href={ href }>{ text }</LinkUnderlined>
+									<LinkUnderlined href={href}>{ text }</LinkUnderlined>
 								</li>
 							))
 						}
