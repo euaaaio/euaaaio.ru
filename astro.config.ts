@@ -1,21 +1,19 @@
 import sitemap from '@astrojs/sitemap'
 import { defineConfig } from 'astro/config'
 import rehypeExternalLinks from 'rehype-external-links'
-
 import { remarkLastUpdated } from './plugins/index.js'
 
 export default defineConfig({
 	site: 'https://euaaaio.ru',
 	build: {
-		assets: 'assets'
+		assets: 'assets',
 	},
 	i18n: {
 		defaultLocale: 'en',
 		locales: ['en', 'ru'],
 		routing: {
 			prefixDefaultLocale: false,
-			strategy: 'pathname'
-		}
+		},
 	},
 	integrations: [sitemap()],
 	markdown: {
@@ -24,16 +22,16 @@ export default defineConfig({
 				rehypeExternalLinks,
 				{
 					rel: ['noopener'],
-					target: '_blank'
-				}
-			]
+					target: '_blank',
+				},
+			],
 		],
 		remarkPlugins: [
 			// @ts-expect-error bug in Astro types
-			remarkLastUpdated
-		]
+			remarkLastUpdated,
+		],
 	},
 	devToolbar: {
-		enabled: false
-	}
+		enabled: false,
+	},
 })

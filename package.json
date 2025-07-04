@@ -13,8 +13,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "test:types": "astro check",
-    "test:eslint": "eslint ./src",
-    "test:stylelint": "stylelint './src/**/*.{astro,css}'",
+    "test:eslint": "eslint .",
+    "test:stylelint": "stylelint './**/*.{astro,css}'",
     "test": "pnpm run /^test:/",
     "astro": "astro"
   },
