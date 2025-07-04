@@ -45,172 +45,250 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 </script>
 
-<style lang="sass" is:global>
-.background
-	--show: 0
-	--circle-1: 0deg
-	--circle-2: 0deg
-	--circle-3: 0deg
-	--circle-4: 0deg
-	--circle-5: 0deg
-	--circle-6: 0deg
+<style is:global>
+.background {
+  --show: 0;
+  --circle-1: 0deg;
+  --circle-2: 0deg;
+  --circle-3: 0deg;
+  --circle-4: 0deg;
+  --circle-5: 0deg;
+  --circle-6: 0deg;
 
-	position: fixed
-	inset: 30vh 0 auto
-	z-index: -1
-	display: flex
-	justify-content: center
-	filter: blur(11px)
-	opacity: var(--show)
-	transition: opacity 1s ease-in-out
+  position: fixed;
+  inset: 30vh 0 auto;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  opacity: var(--show);
+  filter: blur(11px);
+  transition: opacity 1s ease-in-out;
+}
 
-	@media (width <= 1440px)
-		filter: blur(9px)
+@media (width <= 1440px) {
+  .background {
+    filter: blur(9px);
+  }
+}
 
-	@media (width <= 1024px)
-		filter: blur(7px)
+@media (width <= 1024px) {
+  .background {
+    filter: blur(7px);
+  }
+}
 
-	@media (width <= 840px)
-		filter: blur(5px)
+@media (width <= 840px) {
+  .background {
+    filter: blur(5px);
+  }
+}
 
-	@media (width <= 736px)
-		filter: blur(4px)
+@media (width <= 736px) {
+  .background {
+    filter: blur(4px);
+  }
+}
 
-	@media (width <= 480px)
-		filter: blur(3px)
+@media (width <= 480px) {
+  .background {
+    filter: blur(3px);
+  }
+}
 
-	@media (prefers-color-scheme: light)
-		filter: blur(14px)
+@media (prefers-color-scheme: light) {
+  .background {
+    filter: blur(14px);
+  }
+}
 
-		@media (width <= 1440px)
-			filter: blur(12px)
+@media (prefers-color-scheme: light) and (width <= 1440px) {
+  .background {
+    filter: blur(12px);
+  }
+}
 
-		@media (width <= 1024px)
-			filter: blur(10px)
+@media (prefers-color-scheme: light) and (width <= 1024px) {
+  .background {
+    filter: blur(10px);
+  }
+}
 
-		@media (width <= 840px)
-			filter: blur(7px)
+@media (prefers-color-scheme: light) and (width <= 840px) {
+  .background {
+    filter: blur(7px);
+  }
+}
 
-		@media (width <= 736px)
-			filter: blur(6px)
+@media (prefers-color-scheme: light) and (width <= 736px) {
+  .background {
+    filter: blur(6px);
+  }
+}
 
-		@media (width <= 480px)
-			filter: blur(5px)
+@media (prefers-color-scheme: light) and (width <= 480px) {
+  .background {
+    filter: blur(5px);
+  }
+}
 
-.background__container
-	position: relative
-	width: 90vw
-	aspect-ratio: 1
+.background__container {
+  position: relative;
+  width: 90vw;
+  aspect-ratio: 1;
+}
 
-.background__circle
-	position: absolute
-	background-size: cover
+.background__circle {
+  position: absolute;
+  background-size: cover;
+}
 
-.background__circle:nth-child(1)
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	background-image: url('../assets/background/6-dark.webp')
-	animation: spin-1 100s linear infinite
+.background__circle:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/background/6-dark.webp");
+  animation: spin-1 100s linear infinite;
+}
 
-	@media (prefers-color-scheme: light)
-		background-image: url('../assets/background/6-light.webp')
+@media (prefers-color-scheme: light) {
+  .background__circle:nth-child(1) {
+    background-image: url("../assets/background/6-light.webp");
+  }
+}
 
-.background__circle:nth-child(2)
-	top: 5%
-	left: 5%
-	width: 90%
-	height: 90%
-	background-image: url('../assets/background/5-dark.webp')
-	animation: spin-2 90s linear infinite reverse
+.background__circle:nth-child(2) {
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background-image: url("../assets/background/5-dark.webp");
+  animation: spin-2 90s linear infinite reverse;
+}
 
-	@media (prefers-color-scheme: light)
-		background-image: url('../assets/background/5-light.webp')
+@media (prefers-color-scheme: light) {
+  .background__circle:nth-child(2) {
+    background-image: url("../assets/background/5-light.webp");
+  }
+}
 
-.background__circle:nth-child(3)
-	top: 10%
-	left: 10%
-	width: 80%
-	height: 80%
-	background-image: url('../assets/background/4-dark.webp')
-	animation: spin-3 80s linear infinite
+.background__circle:nth-child(3) {
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-image: url("../assets/background/4-dark.webp");
+  animation: spin-3 80s linear infinite;
+}
 
-	@media (prefers-color-scheme: light)
-		background-image: url('../assets/background/4-light.webp')
+@media (prefers-color-scheme: light) {
+  .background__circle:nth-child(3) {
+    background-image: url("../assets/background/4-light.webp");
+  }
+}
 
-.background__circle:nth-child(4)
-	top: 15%
-	left: 15%
-	width: 70%
-	height: 70%
-	background-image: url('../assets/background/3-dark.webp')
-	animation: spin-4 70s linear infinite reverse
+.background__circle:nth-child(4) {
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  background-image: url("../assets/background/3-dark.webp");
+  animation: spin-4 70s linear infinite reverse;
+}
 
-	@media (prefers-color-scheme: light)
-		background-image: url('../assets/background/3-light.webp')
+@media (prefers-color-scheme: light) {
+  .background__circle:nth-child(4) {
+    background-image: url("../assets/background/3-light.webp");
+  }
+}
 
-.background__circle:nth-child(5)
-	top: 20%
-	left: 20%
-	width: 60%
-	height: 60%
-	background-image: url('../assets/background/2-dark.webp')
-	animation: spin-5 60s linear infinite
+.background__circle:nth-child(5) {
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  background-image: url("../assets/background/2-dark.webp");
+  animation: spin-5 60s linear infinite;
+}
 
-	@media (prefers-color-scheme: light)
-		background-image: url('../assets/background/2-light.webp')
+@media (prefers-color-scheme: light) {
+  .background__circle:nth-child(5) {
+    background-image: url("../assets/background/2-light.webp");
+  }
+}
 
-.background__circle:nth-child(6)
-	top: 25%
-	left: 25%
-	width: 50%
-	height: 50%
-	background-image: url('../assets/background/1-dark.webp')
-	animation: spin-6 50s linear infinite reverse
+.background__circle:nth-child(6) {
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-image: url("../assets/background/1-dark.webp");
+  animation: spin-6 50s linear infinite reverse;
+}
 
-	@media (prefers-color-scheme: light)
-		background-image: url('../assets/background/1-light.webp')
+@media (prefers-color-scheme: light) {
+  .background__circle:nth-child(6) {
+    background-image: url("../assets/background/1-light.webp");
+  }
+}
 
-@keyframes spin-1
-	0%
-		transform: rotate(var(--circle-1))
+@keyframes spin-1 {
+  0% {
+    transform: rotate(var(--circle-1));
+  }
 
-	100%
-		transform: rotate(calc(var(--circle-1) + 360deg))
+  100% {
+    transform: rotate(calc(var(--circle-1) + 360deg));
+  }
+}
 
-@keyframes spin-2
-	0%
-		transform: rotate(var(--circle-2))
+@keyframes spin-2 {
+  0% {
+    transform: rotate(var(--circle-2));
+  }
 
-	100%
-		transform: rotate(calc(var(--circle-2) + 360deg))
+  100% {
+    transform: rotate(calc(var(--circle-2) + 360deg));
+  }
+}
 
-@keyframes spin-3
-	0%
-		transform: rotate(var(--circle-3))
+@keyframes spin-3 {
+  0% {
+    transform: rotate(var(--circle-3));
+  }
 
-	100%
-		transform: rotate(calc(var(--circle-3) + 360deg))
+  100% {
+    transform: rotate(calc(var(--circle-3) + 360deg));
+  }
+}
 
-@keyframes spin-4
-	0%
-		transform: rotate(var(--circle-4))
+@keyframes spin-4 {
+  0% {
+    transform: rotate(var(--circle-4));
+  }
 
-	100%
-		transform: rotate(calc(var(--circle-4) + 360deg))
+  100% {
+    transform: rotate(calc(var(--circle-4) + 360deg));
+  }
+}
 
-@keyframes spin-5
-	0%
-		transform: rotate(var(--circle-5))
+@keyframes spin-5 {
+  0% {
+    transform: rotate(var(--circle-5));
+  }
 
-	100%
-		transform: rotate(calc(var(--circle-5) + 360deg))
+  100% {
+    transform: rotate(calc(var(--circle-5) + 360deg));
+  }
+}
 
-@keyframes spin-6
-	0%
-		transform: rotate(var(--circle-6))
+@keyframes spin-6 {
+  0% {
+    transform: rotate(var(--circle-6));
+  }
 
-	100%
-		transform: rotate(calc(var(--circle-6) + 360deg))
+  100% {
+    transform: rotate(calc(var(--circle-6) + 360deg));
+  }
+}
 </style>

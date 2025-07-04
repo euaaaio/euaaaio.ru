@@ -32,16 +32,18 @@ const {
 			)
 }
 
-<style lang="sass">
-.link-preview
-  display: inline-flex
-  flex-direction: column
-  gap: 20px
+<style>
+.link-preview {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-  &:after
-    content: "→"
+.link-preview::after {
+  content: "→";
+}
 
-.link-preview.--external
-  &:after
-    content: "↗"
+.link-preview.--external::after {
+  content: "↗";
+}
 </style>

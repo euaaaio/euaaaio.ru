@@ -13,28 +13,33 @@ const currentYear = new Date().getFullYear()
 	</div>
 </footer>
 
-<style lang="sass">
-.footer
-	min-height: 100vh
+<style>
+.footer {
+  min-height: 100vh;
+}
 
-.copyright
-	display: flex
-	flex-direction: column
-	grid-area: j
-	gap: 240px
-	justify-content: flex-end
-	padding: 240px 0 120px
+.copyright {
+  display: flex;
+  flex-direction: column;
+  grid-area: j;
+  gap: 240px;
+  justify-content: flex-end;
+  padding: 240px 0 120px;
+}
 
-.year
-	position: relative
+.year {
+  position: relative;
+}
 
-.start
-	position: absolute
-	left: 0
-	transform: translateX(-100%)
+.start {
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+}
 
-.end
-	display: block
-	margin-top: 20px
-	color: var(--p-color-muted)
+.end {
+  display: block;
+  margin-top: 20px;
+  color: var(--p-color-muted);
+}
 </style>
