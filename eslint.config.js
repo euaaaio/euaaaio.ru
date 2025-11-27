@@ -1,4 +1,4 @@
-import { defineConfig } from '@euaaaio/eslint-config'
+import { defineConfig } from 'eslint-config-fans'
 
 export default defineConfig({
 	typescript: true,
