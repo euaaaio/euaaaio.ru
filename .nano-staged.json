@@ -1,4 +1,5 @@
 {
-  "*.{astro}": "eslint",
-  "*.{astro,sass}": "stylelint"
+  "*.{astro,js,ts}": "eslint",
+  "*.{astro,js,ts,css,json}": "oxfmt",
+  "*.{astro,css}": "stylelint"
 }

@@ -1,6 +1,6 @@
 module.exports = {
-	plugins: {
-		'postcss-focus': {},
-		'autoprefixer': {},
-	},
+  plugins: {
+    'postcss-focus': {},
+    'autoprefixer': {},
+  },
 }

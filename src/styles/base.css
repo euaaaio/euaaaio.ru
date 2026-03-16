@@ -31,7 +31,13 @@
 
 html {
   padding: 10px;
-  font-family: Inter, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    sans-serif;
   font-size: var(--p-body-font-size);
   font-weight: var(--p-body-font-weight);
   font-optical-sizing: auto;

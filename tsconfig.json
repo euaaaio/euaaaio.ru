@@ -14,11 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["src/*"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-    ]
+    "lib": ["esnext", "dom"]
   }
 }

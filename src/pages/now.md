@@ -1,10 +1,10 @@
 ---
-layout: "@/layouts/ArticleLayout.astro"
+layout: '@/layouts/ArticleLayout.astro'
 
 name: Eduard Aksamitov
 
 title: What I’m working on now
-description:
+description: |
   Telling what I'm working on now and will be working on later.
   Publishing secret things. Keeping the list up to date.
 ---
