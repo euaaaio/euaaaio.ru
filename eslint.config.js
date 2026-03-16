@@ -1,3 +1,4 @@
+// @ts-check
 import { defineConfig } from 'eslint-config-fans'
 
 export default defineConfig({
