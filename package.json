@@ -46,5 +46,8 @@
     "stylelint-config-recess-order": "^7.6.1",
     "stylelint-config-standard": "^40.0.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@plausible-analytics/tracker": "^0.4.5"
   }
 }

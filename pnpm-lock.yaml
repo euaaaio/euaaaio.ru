@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@plausible-analytics/tracker':
+        specifier: ^0.4.5
+        version: 0.4.5
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.8
@@ -760,6 +764,9 @@ packages:
   '@pkgr/core@0.2.9':
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+
+  '@plausible-analytics/tracker@0.4.5':
+    resolution: {integrity: sha512-6BfAGejXY+YA3Cw6LYT2Zpn4hTxDtPQAawFsYUsQCOg78wIS5C4deAGXTfJffa5VleMWITv5lpJ/EYuQBl1tPA==}
 
   '@rollup/pluginutils@5.3.0':
     resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
@@ -3695,6 +3702,8 @@ snapshots:
   '@package-json/types@0.0.12': {}
 
   '@pkgr/core@0.2.9': {}
+
+  '@plausible-analytics/tracker@0.4.5': {}
 
   '@rollup/pluginutils@5.3.0(rollup@4.53.3)':
     dependencies:

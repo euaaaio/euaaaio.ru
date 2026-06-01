@@ -27,6 +27,16 @@ const { title, description } = Astro.props
 
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Privacy-friendly analytics by Plausible -->
+		<script>
+			import { init } from '@plausible-analytics/tracker'
+
+			init({
+				domain: 'euaaaio.ru',
+				endpoint: 'https://plausible.aoiestudio.ru/api/event',
+			})
+		</script>
 	</head>
 	<body>
 		<slot />
