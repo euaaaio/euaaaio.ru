@@ -1,4 +1,4 @@
-import type { PlaybackState, Track } from '@spotify/web-api-ts-sdk'
+import type { PlaybackState } from '@spotify/web-api-ts-sdk'
 
 const clientId = process.env.SPOTIFY_CLIENT_ID!
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET!
@@ -17,7 +17,11 @@ export default async function handler(): Promise<unknown> {
       return Response.json({ playing: false })
     }
 
-    const item = player.item as Track
+    const item = player.item
+    if (!item || !('artists' in item)) {
+      return Response.json({ playing: false })
+    }
+
     return Response.json({
       playing: true,
       artist: item.artists.map(artist => artist.name).join(', '),

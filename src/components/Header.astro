@@ -1,76 +1,73 @@
 ---
 interface Props {
-	name: string
+  name: string
 }
 
 const { name } = Astro.props
 
-const rootHref = Astro.currentLocale === 'en'
-	? '/'
-	: '/ru'
+const rootHref = Astro.currentLocale === 'en' ? '/' : '/ru'
 
 const basePath = Astro.url.pathname.replace(/^\/ru/, '').replace(/\/$/, '')
-const altLangHref = Astro.currentLocale === 'en'
-	? `/ru${basePath}`
-	: basePath || '/'
+const altLangHref =
+  Astro.currentLocale === 'en' ? `/ru${basePath}` : basePath || '/'
 
 const language = Astro.currentLocale === 'en' ? 'En — Ru' : 'Ru — En'
 ---
 
 <header class="grid header">
-	<a class="header__language" href={altLangHref}>{ language }</a>
-	<a class="header__name" href={rootHref}>{ name }</a>
+  <a class="header__language" href={altLangHref}>{language}</a>
+  <a class="header__name" href={rootHref}>{name}</a>
 </header>
 
 <style>
-.header {
-  position: sticky;
-  top: 10px;
-  z-index: 10000;
-  grid-auto-rows: 0;
-  width: 100%;
-  color: var(--p-color-black);
-}
-
-@media (prefers-color-scheme: dark) {
   .header {
-    color: var(--p-color-white);
-  }
-}
-
-.header__name {
-  grid-row: 1;
-  grid-column: e;
-}
-
-@media (width <= 1024px) {
-  .header__name {
-    grid-column: 2 / span 2;
-  }
-}
-
-@media (width <= 736px) {
-  .header__name {
     position: sticky;
     top: 10px;
+    z-index: 10000;
+    grid-auto-rows: 0;
+    width: 100%;
+    color: var(--p-color-black);
   }
-}
 
-.header__language {
-  grid-row: 1;
-  grid-column: b;
-}
+  @media (prefers-color-scheme: dark) {
+    .header {
+      color: var(--p-color-white);
+    }
+  }
 
-@media (width <= 1024px) {
+  .header__name {
+    grid-row: 1;
+    grid-column: e;
+  }
+
+  @media (width <= 1024px) {
+    .header__name {
+      grid-column: 2 / span 2;
+    }
+  }
+
+  @media (width <= 736px) {
+    .header__name {
+      position: sticky;
+      top: 10px;
+    }
+  }
+
   .header__language {
-    grid-column: 1;
+    grid-row: 1;
+    grid-column: b;
   }
-}
 
-@media (width <= 736px) {
-  .header__language {
-    position: absolute;
-    right: 0;
+  @media (width <= 1024px) {
+    .header__language {
+      grid-column: 1;
+    }
   }
-}
+
+  @media (width <= 736px) {
+    .header__language {
+      position: absolute;
+      right: 0;
+    }
+  }
 </style>

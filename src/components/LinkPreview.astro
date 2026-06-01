@@ -1,49 +1,41 @@
 ---
 interface Props {
-	external?: boolean
-	href: string
+  external?: boolean
+  href: string
 }
 
-const {
-	external = false,
-	href,
-} = Astro.props
+const { external = false, href } = Astro.props
 ---
 
 {
-	external === true
-		? (
-				<a
-					class="link-preview --external"
-					href={href}
-					rel="noopener"
-					target="_blank"
-				>
-					<slot />
-				</a>
-			)
-		: (
-				<a
-					class="link-preview"
-					href={href}
-				>
-					<slot />
-				</a>
-			)
+  external === true ? (
+    <a
+      class="link-preview --external"
+      href={href}
+      rel="noopener"
+      target="_blank"
+    >
+      <slot />
+    </a>
+  ) : (
+    <a class="link-preview" href={href}>
+      <slot />
+    </a>
+  )
 }
 
 <style>
-.link-preview {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  .link-preview {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-.link-preview::after {
-  content: '→';
-}
+  .link-preview::after {
+    content: '→';
+  }
 
-.link-preview.--external::after {
-  content: '↗';
-}
+  .link-preview.--external::after {
+    content: '↗';
+  }
 </style>

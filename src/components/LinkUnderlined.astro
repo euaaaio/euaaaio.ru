@@ -1,23 +1,18 @@
 ---
 interface Props {
-	href: string
+  href: string
 }
 
 const { href } = Astro.props
 ---
 
-<a
-	class="link-underlined"
-	href={href}
-	rel="noopener"
-	target="_blank"
->
-	<slot />
+<a class="link-underlined" href={href} rel="noopener" target="_blank">
+  <slot />
 </a>
 
 <style>
-.link-underlined {
-  text-decoration: underline;
-  text-decoration-color: var(--p-color-border);
-}
+  .link-underlined {
+    text-decoration: underline;
+    text-decoration-color: var(--p-color-border);
+  }
 </style>

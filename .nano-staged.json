@@ -1,5 +1,6 @@
 {
-  "*.{astro,js,ts}": "eslint",
-  "*.{astro,js,ts,css,json}": "oxfmt",
+  "*.{astro,js,ts}": "pnpm oxlint --config oxlint.config.ts",
+  "*.{js,ts,css,json,md,mdx}": "oxfmt",
+  "*.astro": "prettier --write",
   "*.{astro,css}": "stylelint"
 }

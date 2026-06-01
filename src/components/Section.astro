@@ -1,14 +1,11 @@
 ---
 interface Props {
-	id: string
+  id: string
 }
 
 const { id } = Astro.props
 ---
 
-<section
-	class="grid"
-	id={id}
->
-	<slot />
+<section class="grid" id={id}>
+  <slot />
 </section>

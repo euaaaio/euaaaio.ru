@@ -3,8 +3,8 @@ import '@/styles/index.css'
 import Background from '@/components/Background.astro'
 
 interface Props {
-	title: string
-	description: string
+  title: string
+  description: string
 }
 
 const { title, description } = Astro.props
@@ -12,34 +12,42 @@ const { title, description } = Astro.props
 
 <!doctype html>
 <html lang={Astro.currentLocale}>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
-		<link href="/favicon.ico" rel="icon" />
-		<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
-		<link href="/manifest.webmanifest" rel="manifest" />
-		<link href="/sitemap-index.xml" rel="sitemap" />
-		<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <link href="/favicon.ico" rel="icon" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/manifest.webmanifest" rel="manifest" />
+    <link href="/sitemap-index.xml" rel="sitemap" />
+    <meta
+      name="theme-color"
+      content="#000000"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
 
-		<title>{ title }</title>
+    <title>{title}</title>
 
-		<meta name="description" content={description} />
-		<meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
 
-		<!-- Privacy-friendly analytics by Plausible -->
-		<script>
-			import { init } from '@plausible-analytics/tracker'
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script>
+      import { init } from '@plausible-analytics/tracker'
 
-			init({
-				domain: 'euaaaio.ru',
-				endpoint: 'https://plausible.aoiestudio.ru/api/event',
-			})
-		</script>
-	</head>
-	<body>
-		<slot />
-		<Background />
-	</body>
+      init({
+        domain: 'euaaaio.ru',
+        endpoint: 'https://plausible.aoiestudio.ru/api/event',
+      })
+    </script>
+  </head>
+  <body>
+    <slot />
+    <Background />
+  </body>
 </html>
