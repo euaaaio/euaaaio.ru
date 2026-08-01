@@ -1,6 +1,5 @@
 ---
 import '@/styles/index.css'
-import Background from '@/components/Background.astro'
 
 interface Props {
   title: string
@@ -11,25 +10,17 @@ const { title, description } = Astro.props
 ---
 
 <!doctype html>
-<html lang={Astro.currentLocale}>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <!-- The sheet is drawn at a fixed width and zoomed to fit by scripts/fit. -->
+    <meta name="viewport" content="width=2056" />
 
     <link href="/favicon.ico" rel="icon" />
     <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
     <link href="/manifest.webmanifest" rel="manifest" />
     <link href="/sitemap-index.xml" rel="sitemap" />
-    <meta
-      name="theme-color"
-      content="#000000"
-      media="(prefers-color-scheme: dark)"
-    />
-    <meta
-      name="theme-color"
-      content="#ffffff"
-      media="(prefers-color-scheme: light)"
-    />
+    <meta name="theme-color" content="#d8d8d4" />
 
     <title>{title}</title>
 
@@ -48,6 +39,10 @@ const { title, description } = Astro.props
   </head>
   <body>
     <slot />
-    <Background />
+
+    <script>
+      import '@/scripts/fit'
+      import '@/scripts/proximity'
+    </script>
   </body>
 </html>

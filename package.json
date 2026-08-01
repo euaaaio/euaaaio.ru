@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
-    "@astrojs/markdown-remark": "^7.0.0",
     "@astrojs/sitemap": "^3.7.1",
     "@spotify/web-api-ts-sdk": "^1.2.0",
     "@stylistic/stylelint-config": "^4.0.0",
@@ -41,7 +40,6 @@
     "postcss-focus": "^7.0.0",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
-    "rehype-external-links": "^3.0.0",
     "simple-git-hooks": "^2.13.1",
     "stylelint": "^17.4.0",
     "stylelint-config-html": "^1.1.0",

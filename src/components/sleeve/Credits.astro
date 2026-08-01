@@ -1,0 +1,25 @@
+---
+import type { CreditRow } from '@/types/sleeve'
+import Line from './Line.astro'
+
+interface Props {
+  credits: CreditRow[]
+}
+
+const { credits } = Astro.props
+---
+
+{
+  credits.map(credit => (
+    <>
+      <div class="credit-label" style={`grid-row: ${credit.row};`}>
+        {credit.label}
+      </div>
+      <div class="credit-value" style={`grid-row: ${credit.row};`}>
+        {credit.lines.map(line => (
+          <Line line={line} />
+        ))}
+      </div>
+    </>
+  ))
+}

@@ -1,0 +1,127 @@
+/* One face of the sleeve. Square, like the object it borrows from. */
+.sheet {
+  position: relative;
+  min-height: 1120px;
+  aspect-ratio: 1 / 1;
+  padding: 20px 20px 40px;
+}
+
+.side-b {
+  color: var(--p-color-paper);
+  background: var(--p-color-wax);
+}
+
+/* Six equal columns; the third is left empty on purpose.
+   Rows are set per side, one per timecode mark. */
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 20px;
+  height: 100%;
+}
+
+.grid > * {
+  align-self: start;
+}
+
+.credit-label {
+  grid-column: 1;
+}
+
+.credit-value {
+  grid-column: 2;
+}
+
+.col-a {
+  grid-column: 4;
+}
+
+.col-b {
+  grid-column: 5;
+}
+
+.col-c {
+  grid-column: 6;
+}
+
+/* Alignment gaps are non-breaking spaces in the data, so ordinary template
+   whitespace can still collapse the way HTML expects. */
+.line {
+  white-space: nowrap;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+/* Overprinted ink. `--s` runs 1 (illegible) to 0 (clean) and is driven by
+   the cursor's distance to the line — see scripts/proximity.ts. */
+.k1 {
+  text-shadow:
+    calc(var(--s, 1) * 0.5px) 0,
+    calc(var(--s, 1) * -0.5px) 0,
+    calc(var(--s, 1) * 1px) 0,
+    0 calc(var(--s, 1) * 0.4px);
+  transition: text-shadow 0.15s linear;
+}
+
+.k2 {
+  text-shadow:
+    calc(var(--s, 1) * 0.6px) 0,
+    calc(var(--s, 1) * -0.6px) 0,
+    calc(var(--s, 1) * 1.2px) 0,
+    calc(var(--s, 1) * -1.2px) 0,
+    calc(var(--s, 1) * 1.8px) 0,
+    0 calc(var(--s, 1) * 0.5px),
+    0 calc(var(--s, 1) * -0.5px);
+  filter: blur(calc(var(--s, 1) * 0.2px));
+  transition:
+    text-shadow 0.15s linear,
+    filter 0.15s linear;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a::after {
+  margin-left: 2px;
+  content: '\2197';
+}
+
+a:hover {
+  color: var(--p-color-paper);
+  background: var(--p-color-ink);
+}
+
+.side-b a:hover {
+  color: var(--p-color-wax);
+  background: var(--p-color-paper);
+}
+
+.ruler {
+  position: absolute;
+  inset: 0 0 0 auto;
+  display: grid;
+  align-self: stretch;
+  height: 100%;
+  text-align: right;
+}
+
+.bottom {
+  position: absolute;
+  inset: auto 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 20px;
+}
+
+.bottom-catalog {
+  grid-column: 1;
+}
+
+.bottom-note {
+  grid-column: 2 / span 2;
+}

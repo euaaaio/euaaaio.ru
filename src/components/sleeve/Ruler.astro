@@ -1,0 +1,23 @@
+---
+import type { Ruler } from '@/types/sleeve'
+
+interface Props {
+  ruler: Ruler
+}
+
+const { ruler } = Astro.props
+
+/** Timecodes down the right edge — the page reads like a record plays. */
+const marks = Array.from({ length: ruler.count }, (_, index) => {
+  const seconds = ruler.start + index * ruler.step
+  const minutes = Math.floor(seconds / 60)
+  return `${String(minutes).padStart(2, '0')}:${String(seconds % 60).padStart(
+    2,
+    '0',
+  )}`
+})
+---
+
+<div class="ruler" style={`grid-template-rows: repeat(${ruler.count}, 1fr);`}>
+  {marks.map(mark => <span>{mark}</span>)}
+</div>

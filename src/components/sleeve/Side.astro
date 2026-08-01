@@ -1,0 +1,52 @@
+---
+import type { Column, SideData } from '@/types/sleeve'
+import Block from './Block.astro'
+import Credits from './Credits.astro'
+import Ruler from './Ruler.astro'
+
+interface Props {
+  side: SideData
+}
+
+const { side } = Astro.props
+
+const columns: Column[] = ['a', 'b', 'c']
+
+/** Track marks along the bottom edge: A1., A2., A3. — built here so that
+    formatting the template can never split them apart. */
+const marks = columns.map((column, index) => ({
+  column,
+  label: `${side.variant.toUpperCase()}${index + 1}.`,
+}))
+---
+
+<section class:list={['sheet', `side-${side.variant}`]}>
+  <div
+    class="grid"
+    style={`grid-template-rows: repeat(${side.ruler.count}, 1fr);`}
+  >
+    <Credits credits={side.credits} />
+
+    {
+      columns.map(column => (
+        <div class:list={['block', `col-${column}`]} style="grid-row: 1;">
+          {side.heads[column]}
+        </div>
+      ))
+    }
+
+    {side.blocks.map(block => <Block block={block} />)}
+
+    <Ruler ruler={side.ruler} />
+  </div>
+
+  <footer class="bottom">
+    <span class="bottom-catalog">{side.footer.catalog}</span>
+    {side.footer.note && <span class="bottom-note">{side.footer.note}</span>}
+    {
+      marks.map(({ column, label }) => (
+        <span class={`col-${column}`}>{label}</span>
+      ))
+    }
+  </footer>
+</section>

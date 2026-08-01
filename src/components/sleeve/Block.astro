@@ -1,0 +1,19 @@
+---
+import type { Block } from '@/types/sleeve'
+import Line from './Line.astro'
+
+interface Props {
+  block: Block
+}
+
+const { block } = Astro.props
+
+const row =
+  block.span === undefined
+    ? `${block.row}`
+    : `${block.row} / span ${block.span}`
+---
+
+<div class:list={['block', `col-${block.column}`]} style={`grid-row: ${row};`}>
+  {block.lines.map(line => <Line line={line} />)}
+</div>
